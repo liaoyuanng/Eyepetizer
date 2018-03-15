@@ -1,0 +1,1046 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		21F5771A8899267C3B2FE5F2 /* libPods-EyepetizerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */; };
+		B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */; };
+		B36550D42058F05900DB6E70 /* EPCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */; };
+		B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */; };
+		B36550D82058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */; };
+		B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */; };
+		B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */; };
+		B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48BE20565DA600C74E31 /* LYNetwork.m */; };
+		B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C020565DA600C74E31 /* LYNetworkError.m */; };
+		B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C420565DA600C74E31 /* LYNetworkParameter.m */; };
+		B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C120565DA600C74E31 /* LYNetworkHeader.h */; };
+		B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C220565DA600C74E31 /* LYNetworkMacro.h */; };
+		B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */; };
+		B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA0205A516D00702334 /* UIImage+EPColor.m */; };
+		B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA3205A5BE100702334 /* EPSearchBar.m */; };
+		B3D03CA7205A713200702334 /* EPSearchTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */; };
+		B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ECED205257D800B654AF /* AppDelegate.m */; };
+		B3D3ECF4205257D800B654AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D3ECF2205257D800B654AF /* Main.storyboard */; };
+		B3D3ECF6205257D800B654AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D3ECF5205257D800B654AF /* Assets.xcassets */; };
+		B3D3ECF9205257D800B654AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D3ECF7205257D800B654AF /* LaunchScreen.storyboard */; };
+		B3D3ECFC205257D800B654AF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ECFB205257D800B654AF /* main.m */; };
+		B3D3ED06205257D800B654AF /* EyepetizerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED05205257D800B654AF /* EyepetizerTests.m */; };
+		B3D3ED11205257D800B654AF /* EyepetizerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED10205257D800B654AF /* EyepetizerUITests.m */; };
+		B3D3ED26205265DE00B654AF /* EPBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED25205265DE00B654AF /* EPBaseViewController.m */; };
+		B3D3ED29205265EA00B654AF /* EPHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED28205265EA00B654AF /* EPHomeViewController.m */; };
+		B3D3ED2C205265F300B654AF /* EPFollowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED2B205265F300B654AF /* EPFollowViewController.m */; };
+		B3D3ED2F205265FF00B654AF /* EPNotificationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED2E205265FF00B654AF /* EPNotificationViewController.m */; };
+		B3D3ED322052660900B654AF /* EPMineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED312052660900B654AF /* EPMineViewController.m */; };
+		B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED342052662400B654AF /* EPTabBarController.m */; };
+		B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED372052664100B654AF /* EPNavigationController.m */; };
+		B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3B2052714A00B654AF /* EPConst.h */; };
+		B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */; };
+		EE48B9B9DA8F519FA7CB3356 /* libPods-Eyepetizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */; };
+		FFF3B22AE5CF3431142D8614 /* libPods-EyepetizerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DC57499C6B7D1F869009E2 /* libPods-EyepetizerTests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B3D3ED02205257D800B654AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D3ECE1205257D800B654AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3D3ECE8205257D800B654AF;
+			remoteInfo = Eyepetizer;
+		};
+		B3D3ED0D205257D800B654AF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B3D3ECE1205257D800B654AF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B3D3ECE8205257D800B654AF;
+			remoteInfo = Eyepetizer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		024C17ADB92F6897DB9F3DC5 /* Pods-EyepetizerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		08DC57499C6B7D1F869009E2 /* libPods-EyepetizerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EyepetizerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		545F1A17F4462A9E0E70A9DE /* Pods-EyepetizerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eyepetizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.release.xcconfig"; sourceTree = "<group>"; };
+		A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B36550CF2058EFB600DB6E70 /* EPCategoryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListViewController.h; sourceTree = "<group>"; };
+		B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListViewController.m; sourceTree = "<group>"; };
+		B36550D22058F05900DB6E70 /* EPCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryTableViewCell.h; sourceTree = "<group>"; };
+		B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryTableViewCell.m; sourceTree = "<group>"; };
+		B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FZLTXIHJW--GB1-0.TTF"; sourceTree = "<group>"; };
+		B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FZLTZCHJW--GB1-0.TTF"; sourceTree = "<group>"; };
+		B36550DB20592CE900DB6E70 /* EPCategoryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListModel.h; sourceTree = "<group>"; };
+		B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListModel.m; sourceTree = "<group>"; };
+		B38D48BD20565DA600C74E31 /* LYNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetwork.h; sourceTree = "<group>"; };
+		B38D48BE20565DA600C74E31 /* LYNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetwork.m; sourceTree = "<group>"; };
+		B38D48BF20565DA600C74E31 /* LYNetworkError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetworkError.h; sourceTree = "<group>"; };
+		B38D48C020565DA600C74E31 /* LYNetworkError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetworkError.m; sourceTree = "<group>"; };
+		B38D48C120565DA600C74E31 /* LYNetworkHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetworkHeader.h; sourceTree = "<group>"; };
+		B38D48C220565DA600C74E31 /* LYNetworkMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetworkMacro.h; sourceTree = "<group>"; };
+		B38D48C320565DA600C74E31 /* LYNetworkParameter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetworkParameter.h; sourceTree = "<group>"; };
+		B38D48C420565DA600C74E31 /* LYNetworkParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetworkParameter.m; sourceTree = "<group>"; };
+		B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationViewModel.h; sourceTree = "<group>"; };
+		B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationViewModel.m; sourceTree = "<group>"; };
+		B3D03C9B205A4D4B00702334 /* EPSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchViewController.h; sourceTree = "<group>"; };
+		B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchViewController.m; sourceTree = "<group>"; };
+		B3D03C9F205A516D00702334 /* UIImage+EPColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+EPColor.h"; sourceTree = "<group>"; };
+		B3D03CA0205A516D00702334 /* UIImage+EPColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIImage+EPColor.m"; sourceTree = "<group>"; };
+		B3D03CA2205A5BE100702334 /* EPSearchBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchBar.h; sourceTree = "<group>"; };
+		B3D03CA3205A5BE100702334 /* EPSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchBar.m; sourceTree = "<group>"; };
+		B3D03CA5205A713200702334 /* EPSearchTitleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchTitleLabel.h; sourceTree = "<group>"; };
+		B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchTitleLabel.m; sourceTree = "<group>"; };
+		B3D3ECE9205257D800B654AF /* Eyepetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyepetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D3ECEC205257D800B654AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		B3D3ECED205257D800B654AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		B3D3ECF3205257D800B654AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B3D3ECF5205257D800B654AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B3D3ECF8205257D800B654AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B3D3ECFA205257D800B654AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3D3ECFB205257D800B654AF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B3D3ED01205257D800B654AF /* EyepetizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyepetizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D3ED05205257D800B654AF /* EyepetizerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EyepetizerTests.m; sourceTree = "<group>"; };
+		B3D3ED07205257D800B654AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3D3ED0C205257D800B654AF /* EyepetizerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EyepetizerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3D3ED10205257D800B654AF /* EyepetizerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EyepetizerUITests.m; sourceTree = "<group>"; };
+		B3D3ED12205257D800B654AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3D3ED24205265DE00B654AF /* EPBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPBaseViewController.h; sourceTree = "<group>"; };
+		B3D3ED25205265DE00B654AF /* EPBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPBaseViewController.m; sourceTree = "<group>"; };
+		B3D3ED27205265EA00B654AF /* EPHomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeViewController.h; sourceTree = "<group>"; };
+		B3D3ED28205265EA00B654AF /* EPHomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeViewController.m; sourceTree = "<group>"; };
+		B3D3ED2A205265F300B654AF /* EPFollowViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPFollowViewController.h; sourceTree = "<group>"; };
+		B3D3ED2B205265F300B654AF /* EPFollowViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPFollowViewController.m; sourceTree = "<group>"; };
+		B3D3ED2D205265FF00B654AF /* EPNotificationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNotificationViewController.h; sourceTree = "<group>"; };
+		B3D3ED2E205265FF00B654AF /* EPNotificationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNotificationViewController.m; sourceTree = "<group>"; };
+		B3D3ED302052660900B654AF /* EPMineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPMineViewController.h; sourceTree = "<group>"; };
+		B3D3ED312052660900B654AF /* EPMineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPMineViewController.m; sourceTree = "<group>"; };
+		B3D3ED332052662400B654AF /* EPTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTabBarController.h; sourceTree = "<group>"; };
+		B3D3ED342052662400B654AF /* EPTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTabBarController.m; sourceTree = "<group>"; };
+		B3D3ED362052664100B654AF /* EPNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNavigationController.h; sourceTree = "<group>"; };
+		B3D3ED372052664100B654AF /* EPNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNavigationController.m; sourceTree = "<group>"; };
+		B3D3ED3920526ECE00B654AF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		B3D3ED3B2052714A00B654AF /* EPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPConst.h; sourceTree = "<group>"; };
+		B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationView.h; sourceTree = "<group>"; };
+		B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationView.m; sourceTree = "<group>"; };
+		B5D1A8371A8700C5C43DDE59 /* Pods-EyepetizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CA366A0C3C99295978DE6DBB /* Pods-Eyepetizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.debug.xcconfig"; sourceTree = "<group>"; };
+		F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EyepetizerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B3D3ECE6205257D800B654AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE48B9B9DA8F519FA7CB3356 /* libPods-Eyepetizer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ECFE205257D800B654AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FFF3B22AE5CF3431142D8614 /* libPods-EyepetizerTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ED09205257D800B654AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				21F5771A8899267C3B2FE5F2 /* libPods-EyepetizerUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		21A988E0091A191BE5CCA767 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */,
+				08DC57499C6B7D1F869009E2 /* libPods-EyepetizerTests.a */,
+				F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4F14999A1390266760C5F7A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CA366A0C3C99295978DE6DBB /* Pods-Eyepetizer.debug.xcconfig */,
+				82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */,
+				024C17ADB92F6897DB9F3DC5 /* Pods-EyepetizerTests.debug.xcconfig */,
+				A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */,
+				B5D1A8371A8700C5C43DDE59 /* Pods-EyepetizerUITests.debug.xcconfig */,
+				545F1A17F4462A9E0E70A9DE /* Pods-EyepetizerUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		B36550C42058D9E000DB6E70 /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED27205265EA00B654AF /* EPHomeViewController.h */,
+				B3D3ED28205265EA00B654AF /* EPHomeViewController.m */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
+		B36550C52058D9EF00DB6E70 /* Index */ = {
+			isa = PBXGroup;
+			children = (
+				B36550C42058D9E000DB6E70 /* Controlller */,
+				B38D48C52056609300C74E31 /* Model */,
+				B3D3ED3D2052757900B654AF /* View */,
+			);
+			path = Index;
+			sourceTree = "<group>";
+		};
+		B36550C62058DA3800DB6E70 /* CategoryList */ = {
+			isa = PBXGroup;
+			children = (
+				B36550CA2058DA5200DB6E70 /* Controlller */,
+				B36550C92058DA5100DB6E70 /* View */,
+				B36550C82058DA4F00DB6E70 /* Model */,
+			);
+			path = CategoryList;
+			sourceTree = "<group>";
+		};
+		B36550C82058DA4F00DB6E70 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B36550DB20592CE900DB6E70 /* EPCategoryListModel.h */,
+				B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B36550C92058DA5100DB6E70 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B36550D22058F05900DB6E70 /* EPCategoryTableViewCell.h */,
+				B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B36550CA2058DA5200DB6E70 /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				B36550CF2058EFB600DB6E70 /* EPCategoryListViewController.h */,
+				B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
+		B38D48BB20565D8900C74E31 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		B38D48BC20565DA600C74E31 /* Server */ = {
+			isa = PBXGroup;
+			children = (
+				B38D48C220565DA600C74E31 /* LYNetworkMacro.h */,
+				B38D48BD20565DA600C74E31 /* LYNetwork.h */,
+				B38D48BE20565DA600C74E31 /* LYNetwork.m */,
+				B38D48BF20565DA600C74E31 /* LYNetworkError.h */,
+				B38D48C020565DA600C74E31 /* LYNetworkError.m */,
+				B38D48C120565DA600C74E31 /* LYNetworkHeader.h */,
+				B38D48C320565DA600C74E31 /* LYNetworkParameter.h */,
+				B38D48C420565DA600C74E31 /* LYNetworkParameter.m */,
+			);
+			path = Server;
+			sourceTree = "<group>";
+		};
+		B38D48C52056609300C74E31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */,
+				B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3D03C9A205A3FA000702334 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03C9B205A4D4B00702334 /* EPSearchViewController.h */,
+				B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */,
+				B3D03CA5205A713200702334 /* EPSearchTitleLabel.h */,
+				B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */,
+				B3D03CA2205A5BE100702334 /* EPSearchBar.h */,
+				B3D03CA3205A5BE100702334 /* EPSearchBar.m */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		B3D03C9E205A50E800702334 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03C9F205A516D00702334 /* UIImage+EPColor.h */,
+				B3D03CA0205A516D00702334 /* UIImage+EPColor.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		B3D3ECE0205257D800B654AF = {
+			isa = PBXGroup;
+			children = (
+				B3D3ECEB205257D800B654AF /* Eyepetizer */,
+				B3D3ED04205257D800B654AF /* EyepetizerTests */,
+				B3D3ED0F205257D800B654AF /* EyepetizerUITests */,
+				B3D3ECEA205257D800B654AF /* Products */,
+				4F14999A1390266760C5F7A2 /* Pods */,
+				21A988E0091A191BE5CCA767 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B3D3ECEA205257D800B654AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ECE9205257D800B654AF /* Eyepetizer.app */,
+				B3D3ED01205257D800B654AF /* EyepetizerTests.xctest */,
+				B3D3ED0C205257D800B654AF /* EyepetizerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B3D3ECEB205257D800B654AF /* Eyepetizer */ = {
+			isa = PBXGroup;
+			children = (
+				B38D48BC20565DA600C74E31 /* Server */,
+				B38D48BB20565D8900C74E31 /* New Group */,
+				B3D3ED3A2052712800B654AF /* Tools */,
+				B3D3ED23205265CE00B654AF /* Base */,
+				B3D3ED222052655800B654AF /* Home */,
+				B3D3ED212052655600B654AF /* Follow */,
+				B3D3ED202052655400B654AF /* Notification */,
+				B3D3ED1F2052655200B654AF /* Mine */,
+				B3D3ED1E2052642A00B654AF /* Resource */,
+			);
+			path = Eyepetizer;
+			sourceTree = "<group>";
+		};
+		B3D3ED04205257D800B654AF /* EyepetizerTests */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED05205257D800B654AF /* EyepetizerTests.m */,
+				B3D3ED07205257D800B654AF /* Info.plist */,
+			);
+			path = EyepetizerTests;
+			sourceTree = "<group>";
+		};
+		B3D3ED0F205257D800B654AF /* EyepetizerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED10205257D800B654AF /* EyepetizerUITests.m */,
+				B3D3ED12205257D800B654AF /* Info.plist */,
+			);
+			path = EyepetizerUITests;
+			sourceTree = "<group>";
+		};
+		B3D3ED1E2052642A00B654AF /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ECF2205257D800B654AF /* Main.storyboard */,
+				B3D3ECF7205257D800B654AF /* LaunchScreen.storyboard */,
+				B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */,
+				B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */,
+				B3D3ED3920526ECE00B654AF /* PrefixHeader.pch */,
+				B3D3ECFB205257D800B654AF /* main.m */,
+				B3D3ECFA205257D800B654AF /* Info.plist */,
+				B3D3ECF5205257D800B654AF /* Assets.xcassets */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		B3D3ED1F2052655200B654AF /* Mine */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED302052660900B654AF /* EPMineViewController.h */,
+				B3D3ED312052660900B654AF /* EPMineViewController.m */,
+			);
+			path = Mine;
+			sourceTree = "<group>";
+		};
+		B3D3ED202052655400B654AF /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED2D205265FF00B654AF /* EPNotificationViewController.h */,
+				B3D3ED2E205265FF00B654AF /* EPNotificationViewController.m */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		B3D3ED212052655600B654AF /* Follow */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED2A205265F300B654AF /* EPFollowViewController.h */,
+				B3D3ED2B205265F300B654AF /* EPFollowViewController.m */,
+			);
+			path = Follow;
+			sourceTree = "<group>";
+		};
+		B3D3ED222052655800B654AF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03C9A205A3FA000702334 /* Search */,
+				B36550C62058DA3800DB6E70 /* CategoryList */,
+				B36550C52058D9EF00DB6E70 /* Index */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		B3D3ED23205265CE00B654AF /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ECEC205257D800B654AF /* AppDelegate.h */,
+				B3D3ECED205257D800B654AF /* AppDelegate.m */,
+				B3D3ED24205265DE00B654AF /* EPBaseViewController.h */,
+				B3D3ED25205265DE00B654AF /* EPBaseViewController.m */,
+				B3D3ED332052662400B654AF /* EPTabBarController.h */,
+				B3D3ED342052662400B654AF /* EPTabBarController.m */,
+				B3D3ED362052664100B654AF /* EPNavigationController.h */,
+				B3D3ED372052664100B654AF /* EPNavigationController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		B3D3ED3A2052712800B654AF /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03C9E205A50E800702334 /* Category */,
+				B3D3ED3B2052714A00B654AF /* EPConst.h */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		B3D3ED3D2052757900B654AF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */,
+				B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B3D3ECE8205257D800B654AF /* Eyepetizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D3ED15205257D800B654AF /* Build configuration list for PBXNativeTarget "Eyepetizer" */;
+			buildPhases = (
+				662BE1FE8D48B3E2BE4B3520 /* [CP] Check Pods Manifest.lock */,
+				B3D3ECE5205257D800B654AF /* Sources */,
+				B3D3ECE6205257D800B654AF /* Frameworks */,
+				B3D3ECE7205257D800B654AF /* Resources */,
+				F10764304AF40F6DB88BC9E6 /* [CP] Embed Pods Frameworks */,
+				BA177D6FACA9F89DCD8BAD0F /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Eyepetizer;
+			productName = Eyepetizer;
+			productReference = B3D3ECE9205257D800B654AF /* Eyepetizer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B3D3ED00205257D800B654AF /* EyepetizerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D3ED18205257D800B654AF /* Build configuration list for PBXNativeTarget "EyepetizerTests" */;
+			buildPhases = (
+				2705CBD73757E7A7F31694BB /* [CP] Check Pods Manifest.lock */,
+				B3D3ECFD205257D800B654AF /* Sources */,
+				B3D3ECFE205257D800B654AF /* Frameworks */,
+				B3D3ECFF205257D800B654AF /* Resources */,
+				6D96803CAC16B5AAAE7CBA6E /* [CP] Embed Pods Frameworks */,
+				6326441695DD84C720E67989 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3D3ED03205257D800B654AF /* PBXTargetDependency */,
+			);
+			name = EyepetizerTests;
+			productName = EyepetizerTests;
+			productReference = B3D3ED01205257D800B654AF /* EyepetizerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B3D3ED0B205257D800B654AF /* EyepetizerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3D3ED1B205257D800B654AF /* Build configuration list for PBXNativeTarget "EyepetizerUITests" */;
+			buildPhases = (
+				1CD6F885D0B44AD6DED2AFC8 /* [CP] Check Pods Manifest.lock */,
+				B3D3ED08205257D800B654AF /* Sources */,
+				B3D3ED09205257D800B654AF /* Frameworks */,
+				B3D3ED0A205257D800B654AF /* Resources */,
+				3B137AF191901E1FAEF692DB /* [CP] Embed Pods Frameworks */,
+				F199502C0312013406E2727B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B3D3ED0E205257D800B654AF /* PBXTargetDependency */,
+			);
+			name = EyepetizerUITests;
+			productName = EyepetizerUITests;
+			productReference = B3D3ED0C205257D800B654AF /* EyepetizerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B3D3ECE1205257D800B654AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = EP;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = J;
+				TargetAttributes = {
+					B3D3ECE8205257D800B654AF = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					B3D3ED00205257D800B654AF = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B3D3ECE8205257D800B654AF;
+					};
+					B3D3ED0B205257D800B654AF = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B3D3ECE8205257D800B654AF;
+					};
+				};
+			};
+			buildConfigurationList = B3D3ECE4205257D800B654AF /* Build configuration list for PBXProject "Eyepetizer" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B3D3ECE0205257D800B654AF;
+			productRefGroup = B3D3ECEA205257D800B654AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B3D3ECE8205257D800B654AF /* Eyepetizer */,
+				B3D3ED00205257D800B654AF /* EyepetizerTests */,
+				B3D3ED0B205257D800B654AF /* EyepetizerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B3D3ECE7205257D800B654AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D3ECF9205257D800B654AF /* LaunchScreen.storyboard in Resources */,
+				B36550D82058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF in Resources */,
+				B3D3ECF6205257D800B654AF /* Assets.xcassets in Resources */,
+				B3D3ECF4205257D800B654AF /* Main.storyboard in Resources */,
+				B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ECFF205257D800B654AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ED0A205257D800B654AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1CD6F885D0B44AD6DED2AFC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EyepetizerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2705CBD73757E7A7F31694BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-EyepetizerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3B137AF191901E1FAEF692DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6326441695DD84C720E67989 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		662BE1FE8D48B3E2BE4B3520 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Eyepetizer-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D96803CAC16B5AAAE7CBA6E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA177D6FACA9F89DCD8BAD0F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F10764304AF40F6DB88BC9E6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F199502C0312013406E2727B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B3D3ECE5205257D800B654AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */,
+				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
+				B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */,
+				B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */,
+				B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */,
+				B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */,
+				B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */,
+				B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */,
+				B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */,
+				B3D3ECFC205257D800B654AF /* main.m in Sources */,
+				B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */,
+				B3D3ED2C205265F300B654AF /* EPFollowViewController.m in Sources */,
+				B3D03CA7205A713200702334 /* EPSearchTitleLabel.m in Sources */,
+				B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */,
+				B3D3ED2F205265FF00B654AF /* EPNotificationViewController.m in Sources */,
+				B3D3ED322052660900B654AF /* EPMineViewController.m in Sources */,
+				B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */,
+				B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */,
+				B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */,
+				B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */,
+				B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */,
+				B3D3ED29205265EA00B654AF /* EPHomeViewController.m in Sources */,
+				B3D3ED26205265DE00B654AF /* EPBaseViewController.m in Sources */,
+				B36550D42058F05900DB6E70 /* EPCategoryTableViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ECFD205257D800B654AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D3ED06205257D800B654AF /* EyepetizerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3D3ED08205257D800B654AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B3D3ED11205257D800B654AF /* EyepetizerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B3D3ED03205257D800B654AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3D3ECE8205257D800B654AF /* Eyepetizer */;
+			targetProxy = B3D3ED02205257D800B654AF /* PBXContainerItemProxy */;
+		};
+		B3D3ED0E205257D800B654AF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B3D3ECE8205257D800B654AF /* Eyepetizer */;
+			targetProxy = B3D3ED0D205257D800B654AF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B3D3ECF2205257D800B654AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D3ECF3205257D800B654AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B3D3ECF7205257D800B654AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B3D3ECF8205257D800B654AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B3D3ED13205257D800B654AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		B3D3ED14205257D800B654AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B3D3ED16205257D800B654AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA366A0C3C99295978DE6DBB /* Pods-Eyepetizer.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Eyepetizer/resource/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Eyepetizer/resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.Eyepetizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		B3D3ED17205257D800B654AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Eyepetizer/resource/PrefixHeader.pch";
+				INFOPLIST_FILE = "$(SRCROOT)/Eyepetizer/resource/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.Eyepetizer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		B3D3ED19205257D800B654AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 024C17ADB92F6897DB9F3DC5 /* Pods-EyepetizerTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DEA7YDDH2G;
+				INFOPLIST_FILE = EyepetizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.EyepetizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyepetizer.app/Eyepetizer";
+			};
+			name = Debug;
+		};
+		B3D3ED1A205257D800B654AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DEA7YDDH2G;
+				INFOPLIST_FILE = EyepetizerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.EyepetizerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Eyepetizer.app/Eyepetizer";
+			};
+			name = Release;
+		};
+		B3D3ED1C205257D800B654AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5D1A8371A8700C5C43DDE59 /* Pods-EyepetizerUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DEA7YDDH2G;
+				INFOPLIST_FILE = EyepetizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.EyepetizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Eyepetizer;
+			};
+			name = Debug;
+		};
+		B3D3ED1D205257D800B654AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 545F1A17F4462A9E0E70A9DE /* Pods-EyepetizerUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = DEA7YDDH2G;
+				INFOPLIST_FILE = EyepetizerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.imliaoyuan.EyepetizerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Eyepetizer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B3D3ECE4205257D800B654AF /* Build configuration list for PBXProject "Eyepetizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D3ED13205257D800B654AF /* Debug */,
+				B3D3ED14205257D800B654AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D3ED15205257D800B654AF /* Build configuration list for PBXNativeTarget "Eyepetizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D3ED16205257D800B654AF /* Debug */,
+				B3D3ED17205257D800B654AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D3ED18205257D800B654AF /* Build configuration list for PBXNativeTarget "EyepetizerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D3ED19205257D800B654AF /* Debug */,
+				B3D3ED1A205257D800B654AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3D3ED1B205257D800B654AF /* Build configuration list for PBXNativeTarget "EyepetizerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B3D3ED1C205257D800B654AF /* Debug */,
+				B3D3ED1D205257D800B654AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B3D3ECE1205257D800B654AF /* Project object */;
+}
