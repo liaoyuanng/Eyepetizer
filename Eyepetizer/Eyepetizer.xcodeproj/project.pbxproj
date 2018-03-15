@@ -23,6 +23,7 @@
 		B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA0205A516D00702334 /* UIImage+EPColor.m */; };
 		B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA3205A5BE100702334 /* EPSearchBar.m */; };
 		B3D03CA7205A713200702334 /* EPSearchTitleLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */; };
+		B3D03CAA205A7B4B00702334 /* EPHotSpotTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA9205A7B4B00702334 /* EPHotSpotTableViewCell.m */; };
 		B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ECED205257D800B654AF /* AppDelegate.m */; };
 		B3D3ECF4205257D800B654AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3D3ECF2205257D800B654AF /* Main.storyboard */; };
 		B3D3ECF6205257D800B654AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B3D3ECF5205257D800B654AF /* Assets.xcassets */; };
@@ -93,6 +94,8 @@
 		B3D03CA3205A5BE100702334 /* EPSearchBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchBar.m; sourceTree = "<group>"; };
 		B3D03CA5205A713200702334 /* EPSearchTitleLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchTitleLabel.h; sourceTree = "<group>"; };
 		B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchTitleLabel.m; sourceTree = "<group>"; };
+		B3D03CA8205A7B4B00702334 /* EPHotSpotTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHotSpotTableViewCell.h; sourceTree = "<group>"; };
+		B3D03CA9205A7B4B00702334 /* EPHotSpotTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHotSpotTableViewCell.m; sourceTree = "<group>"; };
 		B3D3ECE9205257D800B654AF /* Eyepetizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Eyepetizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B3D3ECEC205257D800B654AF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B3D3ECED205257D800B654AF /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -271,12 +274,9 @@
 		B3D03C9A205A3FA000702334 /* Search */ = {
 			isa = PBXGroup;
 			children = (
-				B3D03C9B205A4D4B00702334 /* EPSearchViewController.h */,
-				B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */,
-				B3D03CA5205A713200702334 /* EPSearchTitleLabel.h */,
-				B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */,
-				B3D03CA2205A5BE100702334 /* EPSearchBar.h */,
-				B3D03CA3205A5BE100702334 /* EPSearchBar.m */,
+				B3D03CAD205A7DE500702334 /* Controller */,
+				B3D03CAC205A7DE300702334 /* View */,
+				B3D03CAB205A7DE100702334 /* Model */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -288,6 +288,35 @@
 				B3D03CA0205A516D00702334 /* UIImage+EPColor.m */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		B3D03CAB205A7DE100702334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3D03CAC205A7DE300702334 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03CA2205A5BE100702334 /* EPSearchBar.h */,
+				B3D03CA3205A5BE100702334 /* EPSearchBar.m */,
+				B3D03CA5205A713200702334 /* EPSearchTitleLabel.h */,
+				B3D03CA6205A713200702334 /* EPSearchTitleLabel.m */,
+				B3D03CA8205A7B4B00702334 /* EPHotSpotTableViewCell.h */,
+				B3D03CA9205A7B4B00702334 /* EPHotSpotTableViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3D03CAD205A7DE500702334 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3D03C9B205A4D4B00702334 /* EPSearchViewController.h */,
+				B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		B3D3ECE0205257D800B654AF = {
@@ -391,9 +420,9 @@
 		B3D3ED222052655800B654AF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				B36550C52058D9EF00DB6E70 /* Index */,
 				B3D03C9A205A3FA000702334 /* Search */,
 				B36550C62058DA3800DB6E70 /* CategoryList */,
-				B36550C52058D9EF00DB6E70 /* Index */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -504,7 +533,7 @@
 			attributes = {
 				CLASSPREFIX = EP;
 				LastUpgradeCheck = 0900;
-				ORGANIZATIONNAME = J;
+				ORGANIZATIONNAME = "StayTrue( https://www.imliaoyuan.com )";
 				TargetAttributes = {
 					B3D3ECE8205257D800B654AF = {
 						CreatedOnToolsVersion = 9.0;
@@ -736,6 +765,7 @@
 				B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */,
 				B3D3ED2C205265F300B654AF /* EPFollowViewController.m in Sources */,
 				B3D03CA7205A713200702334 /* EPSearchTitleLabel.m in Sources */,
+				B3D03CAA205A7B4B00702334 /* EPHotSpotTableViewCell.m in Sources */,
 				B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */,
 				B3D3ED2F205265FF00B654AF /* EPNotificationViewController.m in Sources */,
 				B3D3ED322052660900B654AF /* EPMineViewController.m in Sources */,

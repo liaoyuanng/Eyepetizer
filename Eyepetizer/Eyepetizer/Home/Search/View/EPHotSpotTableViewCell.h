@@ -1,5 +1,5 @@
 //
-//  UIImage+EPColor.h
+//  EPHotSpotTableViewCell.h
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/15.
@@ -8,11 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIImage (EPColor)
+@interface EPHotSpotTableViewCell : UITableViewCell
 
-//颜色设置图片
-+ (UIImage *)imageWithColor:(UIColor *)color;
-
-
+@property (nonatomic, strong, readonly) UILabel *label;
 
 @end

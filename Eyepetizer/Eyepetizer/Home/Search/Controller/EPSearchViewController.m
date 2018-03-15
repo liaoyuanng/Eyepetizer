@@ -3,12 +3,13 @@
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/15.
-//  Copyright © 2018年 J. All rights reserved.
+//  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
 #import "EPSearchViewController.h"
 #import "EPSearchBar.h"
 #import "EPSearchTitleLabel.h"
+#import "EPHotSpotTableViewCell.h"
 
 static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 
@@ -58,7 +59,7 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
         _titleLabel.frame = CGRectMake(0, 64, ScreenWidth, 65);
         _titleLabel.text = @"热搜关键词";
         _titleLabel.textColor = RGB(68, 68, 68);
-        _titleLabel.font = FZFontSize(21);
+        _titleLabel.font = FZFontSize(22);
     }
     return _titleLabel;
 }
@@ -70,7 +71,7 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
         _hotspot.dataSource = self;
         _hotspot.rowHeight = 40.f;
         _hotspot.separatorColor = RGB(236, 236, 236);
-        [_hotspot registerClass:[UITableViewCell class] forCellReuseIdentifier:hotspotCell];
+        [_hotspot registerClass:[EPHotSpotTableViewCell class] forCellReuseIdentifier:hotspotCell];
     }
     return _hotspot;
 }
@@ -83,10 +84,7 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:hotspotCell forIndexPath:indexPath];
-    cell.textLabel.textColor = RGB(70, 135, 215);
-    cell.textLabel.text = @"123";
-    cell.textLabel.font = FZFontSize(13);
+    EPHotSpotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:hotspotCell forIndexPath:indexPath];
     return cell;
 }
 

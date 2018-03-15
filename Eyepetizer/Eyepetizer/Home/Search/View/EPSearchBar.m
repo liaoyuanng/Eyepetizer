@@ -3,7 +3,7 @@
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/15.
-//  Copyright © 2018年 J. All rights reserved.
+//  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
 #import "EPSearchBar.h"
@@ -73,7 +73,7 @@
     if (!_textField) {
         _textField = [[UITextField alloc] initWithFrame:CGRectZero];
         _textField.placeholder = @"搜索视频、作者、用户及标签";
-        _textField.font = FontSize(14);
+        _textField.font = FZXFontSize(14);
         _textField.borderStyle = UITextBorderStyleNone;
         _textField.backgroundColor = RGB(237, 237, 237);
         _textField.layer.cornerRadius = 4.f;

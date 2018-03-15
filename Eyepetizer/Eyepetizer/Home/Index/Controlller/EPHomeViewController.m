@@ -3,7 +3,7 @@
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/9.
-//  Copyright © 2018年 J. All rights reserved.
+//  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
 #import "EPHomeViewController.h"
@@ -41,8 +41,8 @@
     }];
     [navBar.searchSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
-        UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[EPSearchViewController new]];
-        [nav.navigationBar setShadowImage:[UIImage new]];
+        EPNavigationController *nav = [[EPNavigationController alloc] initWithRootViewController:[EPSearchViewController new]];
+        nav.lineHidden = YES;
         [self presentViewController:nav animated:NO completion:nil];
     }];
     [navBar.categorySingal subscribeNext:^(id  _Nullable x) {

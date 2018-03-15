@@ -3,7 +3,7 @@
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/9.
-//  Copyright © 2018年 J. All rights reserved.
+//  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
 #import "EPNavigationController.h"
@@ -17,13 +17,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    self.navigationBar.barTintColor = RGB(250, 250, 250);
+    self.lineHidden = NO;
+    self.navigationBar.barTintColor = RGB(243, 243, 243);
+    // Global setting
     [[UINavigationBar appearance] setBackgroundImage:[UIImage new]
                                       forBarPosition:UIBarPositionAny
-                                          barMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setShadowImage:[UIImage imageWithColor:RGB(237, 237, 237)]];
-    // Do any additional setup after loading the view.
+                                          barMetrics:UIBarMetricsCompact];
+}
+
+- (void)setLineHidden:(BOOL)lineHidden {
+    _lineHidden = lineHidden;
+    if (lineHidden) {
+        [self.navigationBar setShadowImage:[UIImage new]];
+    } else {
+        [self.navigationBar setShadowImage:[UIImage imageWithColor:RGB(237, 237, 237)]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

@@ -3,7 +3,7 @@
 //  Eyepetizer
 //
 //  Created by Ju Liaoyuan on 2018/3/9.
-//  Copyright © 2018年 J. All rights reserved.
+//  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
 #import "EPHomeNavigationView.h"
@@ -170,7 +170,7 @@ static const NSTimeInterval animationDuration = 0.2;
     if (!_contentView) {
         _contentView = [UIView new];
         _contentView.frame = CGRectMake(-4 * [UIScreen mainScreen].scale, 0, ScreenWidth, 44);
-        _contentView.backgroundColor = UIColor.whiteColor;
+        _contentView.backgroundColor = RGB(243, 243, 243);
     }
     return _contentView;
 }
