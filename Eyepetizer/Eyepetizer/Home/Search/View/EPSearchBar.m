@@ -88,6 +88,8 @@
         searchIcon.frame = CGRectMake(0, 0, 30, 30);
         _textField.leftView = searchIcon;
         _textField.leftViewMode = UITextFieldViewModeAlways;
+        // 立即进入编辑状态。
+        [_textField becomeFirstResponder];
     }
     return _textField;
 }

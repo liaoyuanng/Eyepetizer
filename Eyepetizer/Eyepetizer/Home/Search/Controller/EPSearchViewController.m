@@ -10,6 +10,7 @@
 #import "EPSearchBar.h"
 #import "EPSearchTitleLabel.h"
 #import "EPHotSpotTableViewCell.h"
+#import "EPSearchModel.h"
 
 static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 
@@ -21,6 +22,8 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 
 @property (nonatomic, strong) UITableView *hotspot;
 
+@property (nonatomic, copy) NSArray *dataSource;
+
 @end
 
 @implementation EPSearchViewController
@@ -28,13 +31,23 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initUI];
-    
+    [self fetchData];
 }
 
 - (void)initUI {
     self.navigationItem.titleView = self.searchBar;
     [self.view addSubview:self.titleLabel];
     [self.view addSubview:self.hotspot];
+}
+
+- (void)fetchData {
+    EPSearchModel *model = [EPSearchModel new];
+    @weakify(self);
+    [[model.requestCommand execute:nil] subscribeNext:^(id  _Nullable x) {
+        @strongify(self);
+        self.dataSource = x;
+        [self.hotspot reloadData];
+    }];
 }
 
 #pragma mark - lazy load
@@ -71,6 +84,7 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
         _hotspot.dataSource = self;
         _hotspot.rowHeight = 40.f;
         _hotspot.separatorColor = RGB(236, 236, 236);
+        _hotspot.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag; // 滑动时隐藏键盘。
         [_hotspot registerClass:[EPHotSpotTableViewCell class] forCellReuseIdentifier:hotspotCell];
     }
     return _hotspot;
@@ -80,11 +94,12 @@ static NSString * const hotspotCell = @"com.imliaoyuan.hotspot";
 #pragma mark -
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 100;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     EPHotSpotTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:hotspotCell forIndexPath:indexPath];
+    cell.label.text = self.dataSource[indexPath.row];
     return cell;
 }
 

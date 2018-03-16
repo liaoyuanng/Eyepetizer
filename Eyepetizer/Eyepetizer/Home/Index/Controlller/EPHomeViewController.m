@@ -11,8 +11,13 @@
 #import "EPHomeNavigationViewModel.h"
 #import "EPCategoryListViewController.h"
 #import "EPSearchViewController.h"
+#import "EPNormalCell.h"
+#import "EPTextOnlyCell.h"
+#import "EPScrollCell.h"
 
-@interface EPHomeViewController ()
+@interface EPHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+
+@property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
 
@@ -20,13 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initUI];
     [self customNavigationBar];
-}
-
-- (void)dismiss {
-    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[EPCategoryListViewController new]];
-    [self presentViewController:nav animated:YES completion:nil];
 }
 
 - (void)customNavigationBar {
@@ -57,6 +57,31 @@
     }];
 
     self.navigationItem.titleView = navBar;
+}
+
+- (void)initUI {
+    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
+    self.collectionView.backgroundColor = UIColor.whiteColor;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.view addSubview:self.collectionView];
+}
+
+// CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58 + 70 + 15);
+
+- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
+    return CGSizeMake(ScreenWidth, 360);
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    EPScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
+//    cell.titleLabel.text = @"近期热门";
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return 1;
 }
 
 - (void)didReceiveMemoryWarning {

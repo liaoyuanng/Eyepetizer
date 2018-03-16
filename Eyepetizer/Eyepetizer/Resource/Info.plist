@@ -9,6 +9,7 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>DINCondensedBold.TTF</string>
 		<string>FZLTZCHJW--GB1-0.TTF</string>
 		<string>FZLTXIHJW--GB1-0.TTF</string>
 	</array>

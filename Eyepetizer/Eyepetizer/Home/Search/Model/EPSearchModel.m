@@ -1,27 +1,26 @@
 //
-//  EPHomeNavigationViewModel.m
+//  EPSearchModel.m
 //  Eyepetizer
 //
-//  Created by Ju Liaoyuan on 2018/3/12.
+//  Created by Ju Liaoyuan on 2018/3/16.
 //  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
-#import "EPHomeNavigationViewModel.h"
+#import "EPSearchModel.h"
 
-@interface EPHomeNavigationViewModel ()
+@interface EPSearchModel ()
 
-@property (nonatomic, strong, readwrite) RACCommand *requestCommand;
+@property (nonatomic, strong) RACCommand *requestCommand;
 
 @end
 
-@implementation EPHomeNavigationViewModel
-
+@implementation EPSearchModel
 
 - (RACCommand *)requestCommand {
     if (!_requestCommand) {
         _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
-            RACSignal *singal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-                [LYNetwork networkRequestType:GET url:api_tab_list paras:nil completion:^(id response) {
+            RACSignal *signal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
+                [LYNetwork networkRequestType:GET url:api_hotspot paras:nil completion:^(id response) {
                     [subscriber sendNext:response];
                     [subscriber sendCompleted];
                 } failure:^(NSError *error) {
@@ -29,7 +28,7 @@
                 }];
                 return nil;
             }];
-            return singal;
+            return signal;
         }];
     }
     return _requestCommand;

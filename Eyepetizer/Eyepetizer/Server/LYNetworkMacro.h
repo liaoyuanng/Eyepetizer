@@ -14,8 +14,9 @@
 /***************************/
 #pragma mark - Home
 
-#define tab_list @"v5/index/tab/list"
-#define categroy_list @"v5/category/list"
+#define api_tab_list @"v5/index/tab/list"
+#define api_categroy_list @"v5/category/list"
+#define api_hotspot @"v3/queries/hot"
 
 
 /***************************/
@@ -74,7 +75,7 @@
 
 #pragma mark - code list
 
-#define HTTP_SUCCESS 1  // 请求成功
+#define HTTP_SUCCESS 200  // 请求成功
 #define HTTP_CODE_ERROR 4 // 验证码错误
 #define HTTP_TOEKN_INVALID 5 // token 失效
 #define HTTP_SERVER_ERROR 500 // 服务器错误

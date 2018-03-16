@@ -19,16 +19,13 @@
     [super viewDidLoad];
     self.lineHidden = NO;
     self.navigationBar.barTintColor = RGB(243, 243, 243);
-    // Global setting
-    [[UINavigationBar appearance] setBackgroundImage:[UIImage new]
-                                      forBarPosition:UIBarPositionAny
-                                          barMetrics:UIBarMetricsCompact];
 }
 
 - (void)setLineHidden:(BOOL)lineHidden {
     _lineHidden = lineHidden;
     if (lineHidden) {
         [self.navigationBar setShadowImage:[UIImage new]];
+        [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     } else {
         [self.navigationBar setShadowImage:[UIImage imageWithColor:RGB(237, 237, 237)]];
     }

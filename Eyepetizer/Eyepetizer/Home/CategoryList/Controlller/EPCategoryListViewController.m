@@ -73,7 +73,6 @@ static inline void impact() {
     return UILayoutFittingExpandedSize;
 }
 
-
 // Reference:http://www.raywenderlich.com/63089/cookbook-moving-table-view-cells-with-a-long-press-gesture
 - (void)addMoveGesture {
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] init];

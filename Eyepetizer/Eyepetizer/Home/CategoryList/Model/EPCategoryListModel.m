@@ -23,7 +23,7 @@ YY_IgnoreProperties(@[@"requestCommand"])
     if (!_requestCommand) {
         _requestCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal * _Nonnull(id  _Nullable input) {
             RACSignal *singal = [RACSignal createSignal:^RACDisposable * _Nullable(id<RACSubscriber>  _Nonnull subscriber) {
-                [LYNetwork networkRequestType:GET url:categroy_list paras:nil completion:^(id response) {
+                [LYNetwork networkRequestType:GET url:api_categroy_list paras:nil completion:^(id response) {
                     [subscriber sendNext:response[@"itemList"]];
                     [subscriber sendCompleted];
                 } failure:^(NSError *error) {

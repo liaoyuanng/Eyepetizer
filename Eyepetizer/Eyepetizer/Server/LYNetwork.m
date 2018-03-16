@@ -66,7 +66,7 @@
     if (type == GET) {
         [_manager GET:[self.baseUrl URLByAppendingPathComponent:aUrl].absoluteString parameters:paras.result progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
-            if (REQUEST_SUCCESS) {
+            if (((NSHTTPURLResponse *)task.response).statusCode == HTTP_SUCCESS) {
                 !completion ? : completion(responseObject);
             } else {
                 NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:[responseObject[@"errorCode"] integerValue] userInfo:@{LYNetworkErrorMessage:responseObject[@"errorMessage"],LYNetworkErrorResponse:responseObject}];
