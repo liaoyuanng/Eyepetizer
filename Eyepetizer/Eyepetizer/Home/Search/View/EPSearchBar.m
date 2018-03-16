@@ -53,6 +53,10 @@
     }];
 }
 
+- (CGSize)intrinsicContentSize {
+    return UILayoutFittingExpandedSize;
+}
+
 #pragma mark - lazy load
 #pragma mark -
 

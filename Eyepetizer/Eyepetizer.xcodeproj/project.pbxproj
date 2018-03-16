@@ -19,6 +19,7 @@
 		B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C420565DA600C74E31 /* LYNetworkParameter.m */; };
 		B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C120565DA600C74E31 /* LYNetworkHeader.h */; };
 		B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C220565DA600C74E31 /* LYNetworkMacro.h */; };
+		B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */; };
 		B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */; };
 		B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA0205A516D00702334 /* UIImage+EPColor.m */; };
 		B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D03CA3205A5BE100702334 /* EPSearchBar.m */; };
@@ -86,6 +87,8 @@
 		B38D48C420565DA600C74E31 /* LYNetworkParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetworkParameter.m; sourceTree = "<group>"; };
 		B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationViewModel.h; sourceTree = "<group>"; };
 		B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationViewModel.m; sourceTree = "<group>"; };
+		B3C35AC3205B698900B1B130 /* UINavigationBar+EPFixed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+EPFixed.h"; sourceTree = "<group>"; };
+		B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+EPFixed.m"; sourceTree = "<group>"; };
 		B3D03C9B205A4D4B00702334 /* EPSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchViewController.h; sourceTree = "<group>"; };
 		B3D03C9C205A4D4B00702334 /* EPSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchViewController.m; sourceTree = "<group>"; };
 		B3D03C9F205A516D00702334 /* UIImage+EPColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIImage+EPColor.h"; sourceTree = "<group>"; };
@@ -286,6 +289,8 @@
 			children = (
 				B3D03C9F205A516D00702334 /* UIImage+EPColor.h */,
 				B3D03CA0205A516D00702334 /* UIImage+EPColor.m */,
+				B3C35AC3205B698900B1B130 /* UINavigationBar+EPFixed.h */,
+				B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -771,6 +776,7 @@
 				B3D3ED322052660900B654AF /* EPMineViewController.m in Sources */,
 				B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */,
 				B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */,
+				B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */,
 				B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */,
 				B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */,
 				B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */,

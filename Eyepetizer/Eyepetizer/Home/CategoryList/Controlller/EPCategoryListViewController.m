@@ -55,19 +55,24 @@ static inline void impact() {
     [self.navigationController.navigationBar setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor blackColor],
                                                                       NSFontAttributeName:FZFontSize(20)}];
 
+    UIButton *close = [UIButton buttonWithType:UIButtonTypeCustom];
+    close.frame = CGRectMake(0, 0, 44, 44);
+    close.imageEdgeInsets = UIEdgeInsetsMake(0, -15, 0, 15);
+    [close setImage:ImageNamed(@"Action_close") forState:UIControlStateNormal];
+    @weakify(self);
+    [[close rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+        @strongify(self);
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }];
     
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[ImageNamed(@"Action_close") imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]
-                                                                 style:UIBarButtonItemStylePlain
-                                                                target:self
-                                                                action:@selector(completedAndDismiss)];
-    
-    UIBarButtonItem *fixed = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace
-                                                                           target:nil
-                                                                           action:nil];
-    fixed.width = -10;
-    
-    self.navigationItem.leftBarButtonItems = @[fixed, leftItem];
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:close];
+    self.navigationItem.leftBarButtonItems = @[leftItem];
 }
+
+- (CGSize)intrinsicContentSize {
+    return UILayoutFittingExpandedSize;
+}
+
 
 // Reference:http://www.raywenderlich.com/63089/cookbook-moving-table-view-cells-with-a-long-press-gesture
 - (void)addMoveGesture {
@@ -143,10 +148,6 @@ static inline void impact() {
         self.dataSource = ((NSArray *)x).mutableCopy;
         [self.tableView reloadData];
     }];
-}
-
-- (void)completedAndDismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
