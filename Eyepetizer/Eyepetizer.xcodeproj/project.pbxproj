@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21F5771A8899267C3B2FE5F2 /* libPods-EyepetizerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */; };
+		B34D90D5206108CA001131F9 /* EPScrollCellAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */; };
 		B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */; };
 		B36550D42058F05900DB6E70 /* EPCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */; };
 		B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */; };
@@ -75,6 +76,8 @@
 		609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eyepetizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.release.xcconfig"; sourceTree = "<group>"; };
 		A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPScrollCellAgent.h; sourceTree = "<group>"; };
+		B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPScrollCellAgent.m; sourceTree = "<group>"; };
 		B36550CF2058EFB600DB6E70 /* EPCategoryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListViewController.h; sourceTree = "<group>"; };
 		B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListViewController.m; sourceTree = "<group>"; };
 		B36550D22058F05900DB6E70 /* EPCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryTableViewCell.h; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 				B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */,
 				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
 				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
+				B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */,
+				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -787,6 +792,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */,
+				B34D90D5206108CA001131F9 /* EPScrollCellAgent.m in Sources */,
 				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
 				B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */,
 				B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */,

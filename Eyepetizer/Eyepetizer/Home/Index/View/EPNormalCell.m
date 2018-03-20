@@ -57,16 +57,6 @@
     [self bindModel];
 }
 
-- (void)bindModel {
-    self.shareBtn.backgroundColor = UIColor.blueColor;
-    self.timeLabel.backgroundColor = UIColor.redColor;
-    self.coverImageView.backgroundColor = UIColor.purpleColor;
-    self.avatorImageView.backgroundColor = UIColor.yellowColor;
-    self.descriptionLabel.text = @"jssjfakljkflasjld";
-    self.titleLabel.text = @"阿鲁卡多冯就卡了多少积分";
-    self.timeLabel.text = @"08:08";
-}
-
 - (void)addConstraint {
 
     [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -111,6 +101,24 @@
         make.bottom.equalTo(self);
         make.height.equalTo(@(1.0 / [UIScreen mainScreen].scale));
     }];
+}
+
+#pragma mark - public
+#pragma mark -
+
+- (void)bindModel {
+    self.shareBtn.backgroundColor = UIColor.blueColor;
+    self.timeLabel.backgroundColor = UIColor.redColor;
+    self.coverImageView.backgroundColor = UIColor.purpleColor;
+    self.avatorImageView.backgroundColor = UIColor.yellowColor;
+    self.descriptionLabel.text = @"jssjfakljkflasjld";
+    self.titleLabel.text = @"阿鲁卡多冯就卡了多少积分";
+    self.timeLabel.text = @"08:08";
+}
+
+- (void)setHideLine:(BOOL)hideLine {
+    _hideLine = hideLine;
+    self.bottomLine.hidden = hideLine;
 }
 
 #pragma mark - lazy load

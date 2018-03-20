@@ -8,8 +8,9 @@
 
 #import "EPScrollCell.h"
 #import "EPNormalCell.h"
+#import "EPScrollCellAgent.h"
 
-@interface EPScrollCell ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EPScrollCell ()
 
 @property (nonatomic, strong) UILabel *dateLabel;
 
@@ -21,6 +22,8 @@
 
 @property (nonatomic, assign, getter=isAdjust) BOOL adjust;
 
+@property (nonatomic, strong) EPScrollCellAgent *agent;
+
 @end
 
 @implementation EPScrollCell
@@ -29,17 +32,22 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.adjust = NO;
+        [self defaultConfig];
         [self initUI];
     }
     return self;
+}
+
+- (void)defaultConfig {
+    self.agent = [[EPScrollCellAgent alloc] init];
+    self.agent.customer = self;
 }
 
 - (void)initUI {
     [self addSubview:self.dateLabel];
     [self addSubview:self.titleLabel];
     [self addSubview:self.collectionView];
-    
+    [self addSubview:self.bottomLine];
     [self addConstraint];
 }
 
@@ -60,33 +68,25 @@
         make.size.mas_equalTo(CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58 + 70));
         make.top.equalTo(self.titleLabel.mas_bottom);
     }];
+    
+    [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(10);
+        make.right.equalTo(self).offset(-10);
+        make.bottom.equalTo(self);
+        make.height.equalTo(@(1 / [UIScreen mainScreen].scale));
+    }];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    if (!self.isAdjust) {
-        self.titleLabel.imageEdgeInsets = UIEdgeInsetsMake(0, self.titleLabel.titleLabel.frame.size.width, 0, 0);
-        self.titleLabel.titleEdgeInsets = UIEdgeInsetsMake(0, -self.titleLabel.imageView.frame.size.width, 0, 0);
-        self.adjust = YES;
-    }
+    
+    // re layout buttom's image and titleLabel. label on left and image on right.
+    self.titleLabel.imageEdgeInsets = UIEdgeInsetsMake(0, self.titleLabel.titleLabel.frame.size.width, 0, 0);
+    self.titleLabel.titleEdgeInsets = UIEdgeInsetsMake(0, -self.titleLabel.imageView.frame.size.width, 0, 0);
 }
-
 
 #pragma mark - lazy load
 #pragma mark -
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
-}
-
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    EPNormalCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    return cell;
-}
-
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return self.bounds.size;
-}
 
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
@@ -97,10 +97,11 @@
         layout.minimumLineSpacing = 0;
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
-        _collectionView.dataSource = self;
-        _collectionView.delegate = self;
+        _collectionView.dataSource = self.agent;
+        _collectionView.delegate = self.agent;
         _collectionView.pagingEnabled = YES;
-        
+        _collectionView.backgroundColor = UIColor.whiteColor;
+        _collectionView.showsHorizontalScrollIndicator = NO;
         [_collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:@"cell"];
     }
     return _collectionView;
@@ -124,6 +125,14 @@
         [_titleLabel setImage:ImageNamed(@"action_more_black") forState:UIControlStateNormal];
     }
     return _titleLabel;
+}
+
+- (UIView *)bottomLine {
+    if (!_bottomLine) {
+        _bottomLine = [UIView new];
+        _bottomLine.backgroundColor = RGB(237, 237, 237);
+    }
+    return _bottomLine;
 }
 
 @end
