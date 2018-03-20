@@ -288,6 +288,8 @@
 		B38D48C52056609300C74E31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */,
+				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
 				B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */,
 				B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */,
 			);
@@ -492,8 +494,6 @@
 				B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */,
 				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
 				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
-				B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */,
-				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
 			);
 			path = View;
 			sourceTree = "<group>";

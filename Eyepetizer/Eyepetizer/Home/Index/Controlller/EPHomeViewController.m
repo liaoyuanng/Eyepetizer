@@ -17,6 +17,8 @@
 
 @interface EPHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
+@property (nonatomic, strong) UIScrollView *continerView;
+
 @property (nonatomic, strong) UICollectionView *collectionView;
 
 @end
@@ -60,12 +62,21 @@
 }
 
 - (void)initUI {
-    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
-    self.collectionView.backgroundColor = UIColor.whiteColor;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
-    [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:@"cell"];
-    [self.view addSubview:self.collectionView];
+//    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
+//    self.collectionView.backgroundColor = UIColor.whiteColor;
+//    self.collectionView.delegate = self;
+//    self.collectionView.dataSource = self;
+//    [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:@"cell"];
+//    [self.view addSubview:self.collectionView];
+    
+    self.continerView = [[UIScrollView alloc] init];
+    self.continerView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight - 64 - 44);
+    self.continerView.backgroundColor = UIColor.redColor;
+    self.continerView.pagingEnabled = YES;
+//    self.continerView.showsVerticalScrollIndicator = NO;
+    
+    self.continerView.contentSize = CGSizeMake(ScreenWidth * 10, ScreenHeight - 64 - 444);
+    [self.view addSubview:self.continerView];
 }
 
 // CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58 + 70 + 15);
