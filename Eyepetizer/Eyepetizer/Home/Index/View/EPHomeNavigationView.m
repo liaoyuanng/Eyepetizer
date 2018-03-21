@@ -30,7 +30,15 @@ static const NSTimeInterval animationDuration = 0.2;
 
 @property (nonatomic, strong, readwrite) RACSignal *searchSignal;
 
+@property (nonatomic, strong, readwrite) RACSubject *categorySingal;
+
+@property (nonatomic, strong, readwrite) RACSubject *defaultSeleted;
+
 @property (nonatomic, strong) UIButton *lastSelectedBtn;
+
+@property (nonatomic, strong) NSDictionary *datas;
+
+@property (nonatomic, copy) NSArray<EPHomeCategoryListModel *> *dataSource;
 
 @end
 
@@ -74,27 +82,36 @@ static const NSTimeInterval animationDuration = 0.2;
         make.height.equalTo(self.contentView);
     }];
 }
+#pragma mark - public
+#pragma mark -
 
-- (void)setDataSource:(NSDictionary *)dataSource {
-    _dataSource = dataSource;
+- (void)bindModel:(NSDictionary *)datas {
+    _datas = datas;
     [self createCategoryItems];
+}
+
+- (void)updateIndex:(NSInteger)index {
+    UIButton *btn = [self viewWithTag:1000 + index];
+    [self updateIndicator:btn];
 }
 
 #pragma mark - private
 #pragma mark -
 
 - (void)createCategoryItems {
-    NSArray *category = self.dataSource[@"tabInfo"][@"tabList"];
-    NSInteger defaultIndex = [self.dataSource[@"tabInfo"][@"defaultIdx"] integerValue];
+    NSArray *category = self.datas[@"tabInfo"][@"tabList"];
+    NSInteger defaultIndex = [self.datas[@"tabInfo"][@"defaultIdx"] integerValue];
+    NSMutableArray *temp_dataSource = [NSMutableArray new];
     // update UI
     [category enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        EPHomeCategoryListModel *model = [EPHomeCategoryListModel yy_modelWithDictionary:obj];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = 1000 + idx;
         btn.frame = CGRectMake(idx * BtnWidth, 0, BtnWidth, self.frame.size.height);
         btn.titleLabel.font = FZFontSize(13);
         [btn setTitleColor:RGB(42, 42, 42) forState:UIControlStateSelected];
         [btn setTitleColor:RGB(128, 128, 128) forState:UIControlStateNormal];
-        [btn setTitle:((NSDictionary *)obj)[@"name"] forState:UIControlStateNormal];
+        [btn setTitle:model.name forState:UIControlStateNormal];
         [[btn rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
             if (self.lastSelectedBtn != x) {
                 [self.categorySingal sendNext:x];
@@ -108,8 +125,15 @@ static const NSTimeInterval animationDuration = 0.2;
             self.indicator.center = CGPointMake(btn.center.x, 38);
             self.lastSelectedBtn = btn;
         }
+        [temp_dataSource addObject:model];
     }];
     self.categoryView.contentSize = CGSizeMake(BtnWidth * category.count, self.categoryView.frame.size.height);
+    // free memory.
+    self.dataSource = temp_dataSource.copy;
+    temp_dataSource = nil;
+    // update UI.
+    [self.defaultSeleted sendNext:RACTuplePack(@(category.count),@(defaultIndex))];
+    [self.defaultSeleted sendCompleted];
 }
 
 - (void)updateIndicator:(UIButton *)sender {
@@ -215,6 +239,13 @@ static const NSTimeInterval animationDuration = 0.2;
         _categorySingal = [RACSubject subject];
     }
     return _categorySingal;
+}
+
+- (RACSubject *)defaultSeleted {
+    if (!_defaultSeleted) {
+        _defaultSeleted = [RACSubject subject];
+    }
+    return _defaultSeleted;
 }
 
 @end

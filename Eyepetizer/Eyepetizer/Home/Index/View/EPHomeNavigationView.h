@@ -7,15 +7,34 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPHomeCategoryListModel.h"
 
 @interface EPHomeNavigationView : UIView
 
+/**
+ menu item action
+ */
 @property (nonatomic, strong, readonly) RACSignal *menuSignal;
 
+/**
+ search item action
+ */
 @property (nonatomic, strong, readonly) RACSignal *searchSignal;
 
-@property (nonatomic, strong) RACSubject *categorySingal;
+/**
+ category items action
+ */
+@property (nonatomic, strong, readonly) RACSubject *categorySingal;
 
-@property (nonatomic, copy) NSDictionary *dataSource;
+/**
+ update UI, set total of category items, and default select index.
+ */
+@property (nonatomic, strong, readonly) RACSubject *defaultSeleted;
+
+@property (nonatomic, copy, readonly) NSArray<EPHomeCategoryListModel *> *dataSource;
+
+- (void)updateIndex:(NSInteger)index;
+
+- (void)bindModel:(NSDictionary *)datas;
 
 @end

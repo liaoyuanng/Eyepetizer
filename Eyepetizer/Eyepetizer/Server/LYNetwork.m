@@ -63,8 +63,15 @@
 
 - (void)networkRequestType:(LYNetworkRequestType)type url:(NSString *)aUrl paras:(LYNetworkParameter *)paras completion:(void (^)(id response))completion failure:(void(^)(NSError *error))failure {
     
+    NSString *url = nil;
+    if ([aUrl hasPrefix:@"https:"] || [aUrl hasPrefix:@"http:"]) {
+        url = aUrl;
+    } else {
+        url = [self.baseUrl URLByAppendingPathComponent:aUrl].absoluteString;
+    }
+    
     if (type == GET) {
-        [_manager GET:[self.baseUrl URLByAppendingPathComponent:aUrl].absoluteString parameters:paras.result progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [_manager GET:url parameters:paras.result progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
             if (((NSHTTPURLResponse *)task.response).statusCode == HTTP_SUCCESS) {
                 !completion ? : completion(responseObject);
@@ -77,7 +84,7 @@
         }];
     } else {
         
-        [_manager POST:[self.baseUrl URLByAppendingPathComponent:aUrl].absoluteString parameters:paras.result progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        [_manager POST:url parameters:paras.result progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
             NSLog(@"~~~%@",responseObject);
             if (REQUEST_SUCCESS) {
                 !completion ? : completion(responseObject);

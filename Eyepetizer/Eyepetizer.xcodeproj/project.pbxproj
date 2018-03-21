@@ -14,6 +14,9 @@
 		B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */; };
 		B36550D82058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */; };
 		B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */; };
+		B383415D20620F06004F9198 /* EPHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B383415C20620F05004F9198 /* EPHomeCollectionController.m */; };
+		B38341602062484A004F9198 /* EPHomeCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B383415F2062484A004F9198 /* EPHomeCategoryListModel.m */; };
+		B383416320624EDA004F9198 /* EPHomeCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B383416220624EDA004F9198 /* EPHomeCollectionViewModel.m */; };
 		B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */; };
 		B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48BE20565DA600C74E31 /* LYNetwork.m */; };
 		B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C020565DA600C74E31 /* LYNetworkError.m */; };
@@ -86,6 +89,12 @@
 		B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FZLTZCHJW--GB1-0.TTF"; sourceTree = "<group>"; };
 		B36550DB20592CE900DB6E70 /* EPCategoryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListModel.h; sourceTree = "<group>"; };
 		B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListModel.m; sourceTree = "<group>"; };
+		B383415B20620F05004F9198 /* EPHomeCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCollectionController.h; sourceTree = "<group>"; };
+		B383415C20620F05004F9198 /* EPHomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeCollectionController.m; sourceTree = "<group>"; };
+		B383415E2062484A004F9198 /* EPHomeCategoryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCategoryListModel.h; sourceTree = "<group>"; };
+		B383415F2062484A004F9198 /* EPHomeCategoryListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeCategoryListModel.m; sourceTree = "<group>"; };
+		B383416120624EDA004F9198 /* EPHomeCollectionViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCollectionViewModel.h; sourceTree = "<group>"; };
+		B383416220624EDA004F9198 /* EPHomeCollectionViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeCollectionViewModel.m; sourceTree = "<group>"; };
 		B38D48BD20565DA600C74E31 /* LYNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetwork.h; sourceTree = "<group>"; };
 		B38D48BE20565DA600C74E31 /* LYNetwork.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetwork.m; sourceTree = "<group>"; };
 		B38D48BF20565DA600C74E31 /* LYNetworkError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LYNetworkError.h; sourceTree = "<group>"; };
@@ -212,6 +221,8 @@
 			children = (
 				B3D3ED27205265EA00B654AF /* EPHomeViewController.h */,
 				B3D3ED28205265EA00B654AF /* EPHomeViewController.m */,
+				B383415B20620F05004F9198 /* EPHomeCollectionController.h */,
+				B383415C20620F05004F9198 /* EPHomeCollectionController.m */,
 			);
 			path = Controlller;
 			sourceTree = "<group>";
@@ -292,6 +303,10 @@
 				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
 				B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */,
 				B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */,
+				B383415E2062484A004F9198 /* EPHomeCategoryListModel.h */,
+				B383415F2062484A004F9198 /* EPHomeCategoryListModel.m */,
+				B383416120624EDA004F9198 /* EPHomeCollectionViewModel.h */,
+				B383416220624EDA004F9198 /* EPHomeCollectionViewModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -794,9 +809,12 @@
 				B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */,
 				B34D90D5206108CA001131F9 /* EPScrollCellAgent.m in Sources */,
 				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
+				B383416320624EDA004F9198 /* EPHomeCollectionViewModel.m in Sources */,
+				B383415D20620F06004F9198 /* EPHomeCollectionController.m in Sources */,
 				B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */,
 				B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */,
 				B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */,
+				B38341602062484A004F9198 /* EPHomeCategoryListModel.m in Sources */,
 				B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */,
 				B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */,
 				B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */,

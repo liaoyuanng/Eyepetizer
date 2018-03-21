@@ -26,3 +26,8 @@
     return properties; \
 }
 
+#define YY_Container(properties) \
++ (NSDictionary *)modelContainerPropertyGenericClass { \
+    return properties; \
+}
+

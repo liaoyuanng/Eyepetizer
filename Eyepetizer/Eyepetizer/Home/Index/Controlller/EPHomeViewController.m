@@ -14,12 +14,19 @@
 #import "EPNormalCell.h"
 #import "EPTextOnlyCell.h"
 #import "EPScrollCell.h"
+#import "EPHomeCollectionController.h"
 
-@interface EPHomeViewController ()<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EPHomeViewController ()<UIScrollViewDelegate> {
+    NSInteger _lastSelected;
+}
 
 @property (nonatomic, strong) UIScrollView *continerView;
 
 @property (nonatomic, strong) UICollectionView *collectionView;
+
+@property (nonatomic, strong) EPHomeNavigationView *navigationView;
+
+@property (nonatomic, strong) NSMutableDictionary *childViewControllsMap;
 
 @end
 
@@ -29,85 +36,104 @@
     [super viewDidLoad];
     [self initUI];
     [self customNavigationBar];
+    [self fetchData];
 }
 
 - (void)customNavigationBar {
     
-    EPHomeNavigationView *navBar = [[EPHomeNavigationView alloc] init];
-    navBar.frame = self.navigationController.navigationBar.frame;
+    self.navigationView = [[EPHomeNavigationView alloc] init];
+    self.navigationView.frame = self.navigationController.navigationBar.frame;
+    self.navigationItem.titleView = self.navigationView;
+}
+
+- (void)fetchData {
+    
     @weakify(self);
-    [navBar.menuSignal subscribeNext:^(id  _Nullable x) {
+    // menu btn action
+    [self.navigationView.menuSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:[EPCategoryListViewController new]];
         [self presentViewController:nav animated:YES completion:nil];
     }];
-    [navBar.searchSignal subscribeNext:^(id  _Nullable x) {
+    // search btn action
+    [self.navigationView.searchSignal subscribeNext:^(id  _Nullable x) {
         @strongify(self);
         EPNavigationController *nav = [[EPNavigationController alloc] initWithRootViewController:[EPSearchViewController new]];
         nav.lineHidden = YES;
         [self presentViewController:nav animated:NO completion:nil];
     }];
-    [navBar.categorySingal subscribeNext:^(id  _Nullable x) {
+    // category btns action
+    [self.navigationView.categorySingal subscribeNext:^(id  _Nullable x) {
 //        NSLog(@"%@",x);
     }];
+    // set continerView content size and default select.
+    [self.navigationView.defaultSeleted subscribeNext:^(id  _Nullable x) {
+        RACTupleUnpack(NSNumber *total, NSNumber *selected) = x;
+        self.continerView.contentSize = CGSizeMake(total.integerValue * ScreenWidth, ScreenHeight - 44);
+        self.continerView.contentOffset = CGPointMake(ScreenWidth * selected.integerValue, 0);
+        // initiative call.
+        [self scrollViewDidEndDecelerating:self.continerView];
+        _lastSelected = selected.integerValue;
+    }];
+    
+    // get data from server
     EPHomeNavigationViewModel *viewModel = [EPHomeNavigationViewModel new];
     [[viewModel.requestCommand execute:nil] subscribeNext:^(id  _Nullable x) {
-        navBar.dataSource = (NSDictionary *)x;
+        @strongify(self);
+        [self.navigationView bindModel:x];
     }];
     [viewModel.requestCommand.errors subscribeNext:^(NSError * _Nullable x) {
 
     }];
-
-    self.navigationItem.titleView = navBar;
 }
 
 - (void)initUI {
-//    self.collectionView = [[UICollectionView alloc] initWithFrame:self.view.bounds collectionViewLayout:[UICollectionViewFlowLayout new]];
-//    self.collectionView.backgroundColor = UIColor.whiteColor;
-//    self.collectionView.delegate = self;
-//    self.collectionView.dataSource = self;
-//    [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:@"cell"];
-//    [self.view addSubview:self.collectionView];
     
     self.continerView = [[UIScrollView alloc] init];
-    self.continerView.frame = CGRectMake(0, 64, ScreenWidth, ScreenHeight - 64 - 44);
-    self.continerView.backgroundColor = UIColor.redColor;
+    self.continerView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-44);
+    self.continerView.backgroundColor = UIColor.whiteColor;
     self.continerView.pagingEnabled = YES;
-//    self.continerView.showsVerticalScrollIndicator = NO;
-    
-    self.continerView.contentSize = CGSizeMake(ScreenWidth * 10, ScreenHeight - 64 - 444);
+    self.continerView.delegate = self;
+    self.continerView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:self.continerView];
 }
 
-// CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58 + 70 + 15);
+#pragma mark - scrollView delegate
+#pragma mark -
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
 
-- (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(ScreenWidth, 360);
+    NSInteger index = (NSInteger)floor(fabs(scrollView.contentOffset.x) / ScreenWidth);
+    
+    if (_lastSelected == index) return;
+    
+    [self.navigationView updateIndex:index];
+    
+    if (self.childViewControllsMap[@(index)]) {
+        EPHomeCollectionController *viewController = self.childViewControllsMap[@(index)];
+        [viewController willMoveToParentViewController:self];
+        return;
+    }
+    // See about https://imliaoyuan.com/2016/08/30/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E6%B7%BB%E5%8A%A0child_view_controller.html
+    EPHomeCollectionController *viewcontroller = [[EPHomeCollectionController alloc] initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
+    viewcontroller.apiUrl = self.navigationView.dataSource[index].apiUrl;
+    viewcontroller.view.backgroundColor = [UIColor redColor];
+    [self addChildViewController:viewcontroller];
+    viewcontroller.view.frame = CGRectMake(index * ScreenWidth, 64, ScreenWidth, ScreenHeight - 44 - 64);
+    [self.continerView addSubview:viewcontroller.view];
+    [viewcontroller willMoveToParentViewController:self];
+    [self.childViewControllsMap setObject:viewcontroller forKey:@(index)];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    EPScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-//    cell.titleLabel.text = @"近期热门";
-    return cell;
-}
-
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+- (NSMutableDictionary *)childViewControllsMap {
+    if (!_childViewControllsMap) {
+        _childViewControllsMap = [NSMutableDictionary new];
+    }
+    return _childViewControllsMap;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
