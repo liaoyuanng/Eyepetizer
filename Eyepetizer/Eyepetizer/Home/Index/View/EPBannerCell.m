@@ -25,7 +25,13 @@
 }
 
 - (void)initUI {
-    
+    [self addSubview:self.imageView];
+    [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self).offset(15);
+        make.right.equalTo(self).offset(-15);
+        make.top.equalTo(self).offset(15);
+        make.bottom.equalTo(self).offset(-15);
+    }];
 }
 
 - (void)bindModel:(EPHomeCollectionViewModel *)model {
@@ -37,7 +43,7 @@
 
 - (UIImageView *)imageView {
     if (!_imageView) {
-        
+        _imageView = [UIImageView new];
     }
     return _imageView;
 }
