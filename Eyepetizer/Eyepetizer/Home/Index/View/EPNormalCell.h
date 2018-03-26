@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPHomeCellProtocol.h"
 
-@interface EPNormalCell : UICollectionViewCell
+@interface EPNormalCell : UICollectionViewCell<EPHomeCellProtocol>
 
 @property (nonatomic, strong, readonly) RACSignal *share;
 

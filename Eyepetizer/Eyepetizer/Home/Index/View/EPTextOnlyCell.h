@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPHomeCellProtocol.h"
 
-@interface EPTextOnlyCell : UICollectionViewCell
+@interface EPTextOnlyCell : UICollectionViewCell<EPHomeCellProtocol>
 
 @property (nonatomic, strong) UILabel *titleLabel;
 

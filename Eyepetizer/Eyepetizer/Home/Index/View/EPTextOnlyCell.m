@@ -27,9 +27,13 @@
     }];
 }
 
+- (void)bindModel:(EPHomeCollectionViewModel *)model {
+    self.titleLabel.text = model.data.text;
+}
+
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
-        _titleLabel = [EPFactory labelWithText:nil textColor:RGB(68, 68, 68) font:FZFontSize(20)];
+        _titleLabel = [EPFactory labelWithText:nil textColor:RGB(68, 68, 68) font:FZFontSize(22)];
     }
     return _titleLabel;
 }

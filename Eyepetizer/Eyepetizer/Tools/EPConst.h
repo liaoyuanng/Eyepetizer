@@ -15,6 +15,7 @@
 #define FZXFontSize(_x) [UIFont fontWithName:@"FZLTXIHJW--GB1-0" size:_x]
 #define RGB(r,g,b) RGBA(r,g,b,1)
 #define RGBA(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+#define URL(_x) [NSURL URLWithString:_x]
 
 #define YY_IgnoreProperties(properties) \
 + (NSArray *)modelPropertyBlacklist { \

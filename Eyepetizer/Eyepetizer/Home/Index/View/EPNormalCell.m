@@ -53,8 +53,6 @@
     [self addSubview:self.avatorImageView];
     [self addSubview:self.bottomLine];
     [self addConstraint];
-    
-    [self bindModel];
 }
 
 - (void)addConstraint {
@@ -106,14 +104,11 @@
 #pragma mark - public
 #pragma mark -
 
-- (void)bindModel {
-    self.shareBtn.backgroundColor = UIColor.blueColor;
-    self.timeLabel.backgroundColor = UIColor.redColor;
-    self.coverImageView.backgroundColor = UIColor.purpleColor;
-    self.avatorImageView.backgroundColor = UIColor.yellowColor;
-    self.descriptionLabel.text = @"jssjfakljkflasjld";
-    self.titleLabel.text = @"阿鲁卡多冯就卡了多少积分";
-    self.timeLabel.text = @"08:08";
+- (void)bindModel:(EPHomeCollectionViewModel *)model {
+    self.titleLabel.text = model.data.header.title;
+    self.descriptionLabel.text = model.data.header.desc;
+    self.avatorImageView.yy_imageURL = URL(model.data.header.icon);
+    self.coverImageView.yy_imageURL = URL(model.data.content.data.cover.feed);
 }
 
 - (void)setHideLine:(BOOL)hideLine {
@@ -127,6 +122,7 @@
 - (UIButton *)shareBtn {
     if (!_shareBtn) {
         _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        _shareBtn.alpha = 0.6;
         [_shareBtn setImage:ImageNamed(@"nav_share") forState:UIControlStateNormal];
         self.share = [_shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside];
     }
@@ -143,6 +139,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [EPFactory labelWithText:nil textColor:RGB(68, 68, 68) font:FZFontSize(13) lineBreakMode:NSLineBreakByTruncatingTail];
+        _titleLabel.numberOfLines = 1;
     }
     return _titleLabel;
 }
@@ -151,7 +148,7 @@
     if (!_badgeLabel) {
         
     }
-    return _badgeLabel;
+    return _badgeLabel; //0.790625  0.7439    0.58
 }
 
 - (UILabel *)descriptionLabel {
@@ -166,6 +163,7 @@
         _coverImageView = [UIImageView new];
         _coverImageView.layer.cornerRadius = 4.f;
         _coverImageView.layer.masksToBounds = true;
+        _coverImageView.backgroundColor = RGB(237, 237, 237);
     }
     return _coverImageView;
 }
@@ -175,6 +173,7 @@
         _avatorImageView = [UIImageView new];
         _avatorImageView.layer.cornerRadius = 20.f;
         _avatorImageView.layer.masksToBounds = true;
+        _avatorImageView.backgroundColor = RGB(237, 237, 237);
     }
     return _avatorImageView;
 }

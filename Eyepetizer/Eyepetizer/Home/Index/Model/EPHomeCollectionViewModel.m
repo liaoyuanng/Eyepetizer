@@ -21,6 +21,19 @@ YY_Mapper((@{@"idx":@"id",@"desc":@"description"}))
 
 @end
 
+@implementation EPHomeCollectionViewModel_Data_Cover
+@end
+
+@implementation EPHomeCollectionViewModel_Content
+
+//YY_Container(@{@"itemList":[EPHomeCollectionViewModel class]})
+YY_Mapper((@{@"idx":@"id"}))
+
+@end
+
+
+
+
 @interface EPHomeCollectionViewModel ()
 
 @property (nonatomic, strong) RACCommand *requestCommand;

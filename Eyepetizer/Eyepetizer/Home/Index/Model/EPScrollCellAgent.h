@@ -10,6 +10,8 @@
 
 @interface EPScrollCellAgent : NSObject<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (nonatomic, weak) id customer;
+@property (nonatomic, weak) UICollectionView *customer;
+
+@property (nonatomic, copy) NSArray *dataSource;
 
 @end

@@ -14,6 +14,9 @@
 		B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */; };
 		B36550D82058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */; };
 		B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */; };
+		B37102F82068A7710051B616 /* EPConfigurationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = B37102F72068A7710051B616 /* EPConfigurationManager.m */; };
+		B37102FA2068C3910051B616 /* Lobster 1.4.otf in Resources */ = {isa = PBXBuildFile; fileRef = B37102F92068C3910051B616 /* Lobster 1.4.otf */; };
+		B37102FD206910790051B616 /* EPBannerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B37102FC206910790051B616 /* EPBannerCell.m */; };
 		B383415D20620F06004F9198 /* EPHomeCollectionController.m in Sources */ = {isa = PBXBuildFile; fileRef = B383415C20620F05004F9198 /* EPHomeCollectionController.m */; };
 		B38341602062484A004F9198 /* EPHomeCategoryListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B383415F2062484A004F9198 /* EPHomeCategoryListModel.m */; };
 		B383416320624EDA004F9198 /* EPHomeCollectionViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B383416220624EDA004F9198 /* EPHomeCollectionViewModel.m */; };
@@ -89,6 +92,12 @@
 		B36550D62058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FZLTZCHJW--GB1-0.TTF"; sourceTree = "<group>"; };
 		B36550DB20592CE900DB6E70 /* EPCategoryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListModel.h; sourceTree = "<group>"; };
 		B36550DC20592CE900DB6E70 /* EPCategoryListModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListModel.m; sourceTree = "<group>"; };
+		B37102F52068A37E0051B616 /* EPHomeCellProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCellProtocol.h; sourceTree = "<group>"; };
+		B37102F62068A7710051B616 /* EPConfigurationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPConfigurationManager.h; sourceTree = "<group>"; };
+		B37102F72068A7710051B616 /* EPConfigurationManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPConfigurationManager.m; sourceTree = "<group>"; };
+		B37102F92068C3910051B616 /* Lobster 1.4.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lobster 1.4.otf"; sourceTree = "<group>"; };
+		B37102FB206910790051B616 /* EPBannerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPBannerCell.h; sourceTree = "<group>"; };
+		B37102FC206910790051B616 /* EPBannerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPBannerCell.m; sourceTree = "<group>"; };
 		B383415B20620F05004F9198 /* EPHomeCollectionController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCollectionController.h; sourceTree = "<group>"; };
 		B383415C20620F05004F9198 /* EPHomeCollectionController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeCollectionController.m; sourceTree = "<group>"; };
 		B383415E2062484A004F9198 /* EPHomeCategoryListModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeCategoryListModel.h; sourceTree = "<group>"; };
@@ -299,6 +308,7 @@
 		B38D48C52056609300C74E31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B37102F52068A37E0051B616 /* EPHomeCellProtocol.h */,
 				B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */,
 				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
 				B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */,
@@ -422,6 +432,7 @@
 		B3D3ED1E2052642A00B654AF /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				B37102F92068C3910051B616 /* Lobster 1.4.otf */,
 				B3C35AD8205BCFAF00B1B130 /* DINCondensedBold.TTF */,
 				B3D3ECF2205257D800B654AF /* Main.storyboard */,
 				B3D3ECF7205257D800B654AF /* LaunchScreen.storyboard */,
@@ -494,6 +505,8 @@
 				B3D3ED3B2052714A00B654AF /* EPConst.h */,
 				B3C35AD5205BA90D00B1B130 /* EPFactory.h */,
 				B3C35AD6205BA90D00B1B130 /* EPFactory.m */,
+				B37102F62068A7710051B616 /* EPConfigurationManager.h */,
+				B37102F72068A7710051B616 /* EPConfigurationManager.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -509,6 +522,8 @@
 				B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */,
 				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
 				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
+				B37102FB206910790051B616 /* EPBannerCell.h */,
+				B37102FC206910790051B616 /* EPBannerCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -629,6 +644,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B37102FA2068C3910051B616 /* Lobster 1.4.otf in Resources */,
 				B3D3ECF9205257D800B654AF /* LaunchScreen.storyboard in Resources */,
 				B3C35AD9205BCFAF00B1B130 /* DINCondensedBold.TTF in Resources */,
 				B36550D82058F46C00DB6E70 /* FZLTZCHJW--GB1-0.TTF in Resources */,
@@ -835,6 +851,8 @@
 				B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */,
 				B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */,
 				B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */,
+				B37102F82068A7710051B616 /* EPConfigurationManager.m in Sources */,
+				B37102FD206910790051B616 /* EPBannerCell.m in Sources */,
 				B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */,
 				B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */,
 				B3D03CA4205A5BE100702334 /* EPSearchBar.m in Sources */,

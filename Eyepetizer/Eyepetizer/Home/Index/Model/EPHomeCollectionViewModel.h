@@ -8,6 +8,73 @@
 
 #import <Foundation/Foundation.h>
 
+@class EPHomeCollectionViewModel_Data;
+@class EPHomeCollectionViewModel_Header;
+@class EPHomeCollectionViewModel_Content;
+@class EPHomeCollectionViewModel_Data_Cover;
+
+@interface EPHomeCollectionViewModel : NSObject
+
+@property (nonatomic, copy) NSString *type;
+
+@property (nonatomic, copy) NSString *tag;
+
+@property (nonatomic, assign) NSInteger idx;
+
+@property (nonatomic, assign) NSInteger adIndex;
+
+@property (nonatomic, strong) EPHomeCollectionViewModel_Data *data;
+
+@property (nonatomic, strong, readonly) RACCommand *requestCommand;
+
+@end
+
+////////////////////////////////////////////////////////////////////////////////////
+
+@interface EPHomeCollectionViewModel_Data : NSObject
+
+@property (nonatomic, copy) NSString *dataType;
+
+@property (nonatomic, copy) NSArray *itemList;
+
+@property (nonatomic, assign) NSInteger count;
+
+@property (nonatomic, copy) NSString *title;
+
+@property (nonatomic, copy) NSString *images;
+
+@property (nonatomic, assign) NSInteger idx;
+
+@property (nonatomic, copy) NSString *desc;
+
+@property (nonatomic, copy) NSString *library;
+
+@property (nonatomic, copy) NSString *resourceType;
+
+@property (nonatomic, copy) NSString *slogan;
+
+@property (nonatomic, copy) NSString *category;
+
+@property (nonatomic, copy) NSString *actionUrl;
+
+@property (nonatomic, copy) NSString *adTrack;
+
+@property (nonatomic, assign) NSInteger shade;
+
+@property (nonatomic, strong) EPHomeCollectionViewModel_Header *header;
+
+@property (nonatomic, copy) NSString *text;
+
+@property (nonatomic, strong) EPHomeCollectionViewModel_Data_Cover *cover;
+
+@property (nonatomic, copy) NSString *playUrl;
+
+@property (nonatomic, strong) EPHomeCollectionViewModel_Content *content;
+
+@end
+
+////////////////////////////////////////////////////////////////////////////////////
+
 @interface EPHomeCollectionViewModel_Header : NSObject
 
 @property (nonatomic, assign) NSInteger idx;
@@ -34,143 +101,39 @@
 
 @property (nonatomic, copy) NSString *desc;
 //
-//@property (nonatomic, assign) NSInteger time;
+@property (nonatomic, assign) NSInteger time;
 //
-//@property (nonatomic, assign) BOOL showHateVideo;
+@property (nonatomic, assign) BOOL showHateVideo;
 
 @end
 
-//@interface EPHomeCollectionViewModel_ItemList : NSObject
-//
-//@property (nonatomic, copy) NSArray *itemList;
-//
-//@end
+////////////////////////////////////////////////////////////////////////////////////
 
 @interface EPHomeCollectionViewModel_Content : NSObject
 
-
-
-@end
-
-@interface EPHomeCollectionViewModel_Data : NSObject
-
-@property (nonatomic, copy) NSString *dataType;
-
-@property (nonatomic, copy) NSArray *itemList;
-
-@property (nonatomic, assign) NSInteger count;
-
-@property (nonatomic, copy) NSString *title;
-
-@property (nonatomic, copy) NSString *images;
-
-@property (nonatomic, assign) NSInteger idx;
-
-@property (nonatomic, copy) NSString *desc;
-
-@property (nonatomic, copy) NSString *actionUrl;
-
-@property (nonatomic, copy) NSString *adTrack;
-
-@property (nonatomic, assign) NSInteger shade;
-
-@property (nonatomic, strong) EPHomeCollectionViewModel_Header *header;
-
-
-
-//@property (nonatomic, strong) EPHomeCollectionViewModel_Content *content;
-
-@end
-
-//@interface EPHomeCollectionViewModel_Data_ItemList_Data_Content_Data_Consumption : NSObject
-//
-//@property (nonatomic, assign) NSInteger collectionCount;
-//
-//@property (nonatomic, assign) NSInteger shareCount;
-//
-//@property (nonatomic, assign) NSInteger replyCount;
-//
-//@end
-//
-//@interface EPHomeCollectionViewModel_Data_ItemList_Data_Content_Data : NSObject
-//
-//@property (nonatomic, copy) NSString *dataType;
-//
-//@property (nonatomic, assign) NSInteger idx;
-//
-//@property (nonatomic, copy) NSString *title;
-//
-//@property (nonatomic, copy) NSString *description;
-//
-//@property (nonatomic, copy) NSString *library;
-//
-//@property (nonatomic, copy) NSArray *tag;
-//
-//@property (nonatomic, strong) EPHomeCollectionViewModel_Data_ItemList_Data_Content_Data_Consumption *consumption;
-//
-//@property (nonatomic, copy) NSString *resourceType;
-//
-//@property (nonatomic, copy) NSString *slogan;
-//
-//
-//
-//@end
-//
-//@interface EPHomeCollectionViewModel_Data_ItemList_Data_Content : NSObject
-//
-//@property (nonatomic, copy) NSString *type;
-//
-//@property (nonatomic, strong) EPHomeCollectionViewModel_Data_ItemList_Data_Content_Data *data;
-//
-//@property (nonatomic, copy) NSString *tag;
-//
-//@property (nonatomic, assign) NSInteger idx;
-//
-//@property (nonatomic, assign) NSInteger adIndex;
-//
-//@end
-//
-//@interface EPHomeCollectionViewModel_Data_ItemList_Data : NSObject
-//
-//@property (nonatomic, copy) NSString *dataType;
-//
-//@property (nonatomic, assign) NSInteger count;
-//
-//@property (nonatomic, copy) NSString *adTrack;
-//
-//@property (nonatomic, strong) EPHomeCollectionViewModel_Header *header;
-//
-//@property (nonatomic, copy)
-//
-////@property (nonatomic, strong) EPHomeCollectionViewModel_Content *content;
-//
-//@end
-//
-//
-//@interface EPHomeCollectionViewModel_Data_ItemList : NSObject
-//
-//@property (nonatomic, copy) NSString *type;
-//
-//@property (nonatomic, strong) EPHomeCollectionViewModel_Data *data;
-//
-//@property (nonatomic, assign) NSInteger count;
-//
-//@property (nonatomic, copy) NSString *adTrack;
-//
-//@end
-
-@interface EPHomeCollectionViewModel : NSObject
-
 @property (nonatomic, copy) NSString *type;
-
-@property (nonatomic, copy) NSString *tag;
-
-@property (nonatomic, assign) NSInteger idx;
-
-@property (nonatomic, assign) NSInteger adIndex;
 
 @property (nonatomic, strong) EPHomeCollectionViewModel_Data *data;
 
-@property (nonatomic, strong, readonly) RACCommand *requestCommand;
+@property (nonatomic, assign) NSInteger idx;
+
+//@property (nonatomic, assign) NSInteger adTrack;
 
 @end
+
+////////////////////////////////////////////////////////////////////////////////////
+
+@interface EPHomeCollectionViewModel_Data_Cover : NSObject
+
+@property (nonatomic, copy) NSString *feed;
+
+@property (nonatomic, copy) NSString *detail;
+
+@property (nonatomic, copy) NSString *blurred;
+
+@property (nonatomic, copy) NSString *sharing;
+
+@property (nonatomic, copy) NSString *homepage;
+
+@end
+

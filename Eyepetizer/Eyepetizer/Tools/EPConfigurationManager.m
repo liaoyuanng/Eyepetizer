@@ -6,8 +6,54 @@
 //  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
-#import "EPConfiguration.h"
+#import "EPConfigurationManager.h"
 
-@implementation EPConfiguration
+NSString * const EPCellTypeBanner = @"banner";
+NSString * const EPCellTypeTextCard = @"textCard";
+NSString * const EPCellTypeFollowCard = @"followCard";
+NSString * const EPCellTypeVideoSmallCard = @"videoSmallCard";
+NSString * const EPCellTypeSquareCard = @"squareCardCollection";
+
+static inline NSDictionary *FontMap() {
+    return @{@"lobster":@"Lobster 1.4",@"bigBold":@"FZLTZCHJW--GB1-0"};
+}
+
+static inline NSDictionary *cellHeightMap() {
+    return @{EPCellTypeBanner:@(20),
+             EPCellTypeTextCard:@(21),
+             EPCellTypeVideoSmallCard:@(20),
+             EPCellTypeSquareCard:@(70.f + 15.f + 0.58 * (ScreenWidth - 30) + 128),
+             EPCellTypeFollowCard:@(70.f + 15.f + 0.58 * (ScreenWidth - 30))};
+}
+
+@implementation EPConfigurationManager
+
++ (instancetype)manager {
+    static EPConfigurationManager *manager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        manager = [[EPConfigurationManager alloc] _init];
+    });
+    return manager;
+}
+
+- (instancetype)_init {
+    if (self = [super init]) {
+        
+    }
+    return self;
+}
+
+- (UIFont *)fontWithKey:(NSString *)key size:(CGFloat)size {
+    if (!key) return nil;
+    return [UIFont fontWithName:FontMap()[key] size:size];
+}
+
+- (CGFloat)cellHeightByType:(NSString *)type {
+    if (!type) return 0.0;
+    
+    return [cellHeightMap()[type] floatValue];
+}
+
 
 @end

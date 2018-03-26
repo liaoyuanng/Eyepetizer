@@ -11,6 +11,7 @@ target 'Eyepetizer' do
   pod 'AFNetworking'
   pod 'YYModel'
   pod 'YYWebImage'
+  pod 'Toast'
 
   target 'EyepetizerTests' do
     inherit! :search_paths

@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "EPHomeCellProtocol.h"
 
-@interface EPBannerCell : UICollectionViewCell
+@interface EPBannerCell : UICollectionViewCell<EPHomeCellProtocol>
 
 @end

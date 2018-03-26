@@ -15,13 +15,19 @@
 
 @implementation EPScrollCellAgent
 
+- (void)setDataSource:(NSArray *)dataSource {
+    _dataSource = dataSource;
+    [self.customer reloadData];
+}
+
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 3;
+    return self.dataSource.count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EPNormalCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
     cell.hideLine = YES;
+    [cell bindModel:self.dataSource[indexPath.row]];
     return cell;
 }
 

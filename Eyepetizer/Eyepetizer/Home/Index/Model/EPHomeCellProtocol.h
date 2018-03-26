@@ -8,6 +8,12 @@
 
 #ifndef EPHomeCellProtocol_h
 #define EPHomeCellProtocol_h
+#import "EPHomeCollectionViewModel.h"
 
+@protocol EPHomeCellProtocol
+
+- (void)bindModel:(EPHomeCollectionViewModel *)model;
+
+@end
 
 #endif /* EPHomeCellProtocol_h */
