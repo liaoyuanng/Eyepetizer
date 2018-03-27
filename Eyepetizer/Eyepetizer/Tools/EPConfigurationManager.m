@@ -19,10 +19,10 @@ static inline NSDictionary *FontMap() {
 }
 
 static inline NSDictionary *cellHeightMap() {
-    return @{EPCellTypeBanner:@(20),
-             EPCellTypeTextCard:@(21),
-             EPCellTypeVideoSmallCard:@(20),
-             EPCellTypeSquareCard:@(70.f + 15.f + 0.58 * (ScreenWidth - 30) + 128),
+    return @{EPCellTypeBanner:@((ScreenWidth - 30) * 0.59),
+             EPCellTypeTextCard:@(21 + 44),
+             EPCellTypeVideoSmallCard:@(Scale(105)),
+             EPCellTypeSquareCard:@(70.f + 15.f + 0.58 * (ScreenWidth - 30) + 85),
              EPCellTypeFollowCard:@(70.f + 15.f + 0.58 * (ScreenWidth - 30))};
 }
 

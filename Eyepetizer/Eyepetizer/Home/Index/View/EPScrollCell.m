@@ -125,7 +125,6 @@
 - (UIButton *)title {
     if (!_title) {
         _title = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_title setTitle:@"开眼今日编辑精选" forState:UIControlStateNormal];
         [_title setTitleColor:RGB(51, 51, 51) forState:UIControlStateNormal];
         _title.titleLabel.font = FZFontSize(30);
         _title.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
@@ -137,7 +136,7 @@
 - (UIView *)bottomLine {
     if (!_bottomLine) {
         _bottomLine = [UIView new];
-        _bottomLine.backgroundColor = RGB(237, 237, 237);
+        _bottomLine.backgroundColor = PlaceHolderColor;
     }
     return _bottomLine;
 }

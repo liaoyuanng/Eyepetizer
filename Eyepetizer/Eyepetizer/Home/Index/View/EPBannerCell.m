@@ -35,7 +35,7 @@
 }
 
 - (void)bindModel:(EPHomeCollectionViewModel *)model {
-    
+    self.imageView.yy_imageURL = URL(model.data.image);
 }
 
 #pragma mark - lazy load
@@ -44,6 +44,9 @@
 - (UIImageView *)imageView {
     if (!_imageView) {
         _imageView = [UIImageView new];
+        _imageView.layer.cornerRadius = 4.f;
+        _imageView.layer.masksToBounds = true;
+        _imageView.backgroundColor = PlaceHolderColor;
     }
     return _imageView;
 }

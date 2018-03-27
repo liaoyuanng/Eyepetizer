@@ -41,9 +41,11 @@
 
 @property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, copy) NSString *images;
+@property (nonatomic, copy) NSString *image;
 
 @property (nonatomic, assign) NSInteger idx;
+
+@property (nonatomic, copy) NSString *type;
 
 @property (nonatomic, copy) NSString *desc;
 

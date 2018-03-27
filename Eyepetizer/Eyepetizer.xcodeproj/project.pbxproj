@@ -54,6 +54,7 @@
 		B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED372052664100B654AF /* EPNavigationController.m */; };
 		B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3B2052714A00B654AF /* EPConst.h */; };
 		B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */; };
+		B3D883C62069E55300330067 /* EPVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883C52069E55300330067 /* EPVideoCell.m */; };
 		EE48B9B9DA8F519FA7CB3356 /* libPods-Eyepetizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */; };
 		FFF3B22AE5CF3431142D8614 /* libPods-EyepetizerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DC57499C6B7D1F869009E2 /* libPods-EyepetizerTests.a */; };
 /* End PBXBuildFile section */
@@ -169,6 +170,8 @@
 		B3D3ED3B2052714A00B654AF /* EPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPConst.h; sourceTree = "<group>"; };
 		B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationView.h; sourceTree = "<group>"; };
 		B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationView.m; sourceTree = "<group>"; };
+		B3D883C42069E55300330067 /* EPVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPVideoCell.h; sourceTree = "<group>"; };
+		B3D883C52069E55300330067 /* EPVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPVideoCell.m; sourceTree = "<group>"; };
 		B5D1A8371A8700C5C43DDE59 /* Pods-EyepetizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA366A0C3C99295978DE6DBB /* Pods-Eyepetizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.debug.xcconfig"; sourceTree = "<group>"; };
 		F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EyepetizerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,14 +519,16 @@
 			children = (
 				B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */,
 				B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */,
+				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
+				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
 				B3C35ACC205B9B1800B1B130 /* EPNormalCell.h */,
 				B3C35ACD205B9B1800B1B130 /* EPNormalCell.m */,
 				B3C35ACF205B9B2200B1B130 /* EPTextOnlyCell.h */,
 				B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */,
-				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
-				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
 				B37102FB206910790051B616 /* EPBannerCell.h */,
 				B37102FC206910790051B616 /* EPBannerCell.m */,
+				B3D883C42069E55300330067 /* EPVideoCell.h */,
+				B3D883C52069E55300330067 /* EPVideoCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -834,6 +839,7 @@
 				B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */,
 				B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */,
 				B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */,
+				B3D883C62069E55300330067 /* EPVideoCell.m in Sources */,
 				B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */,
 				B3C35AD7205BA90D00B1B130 /* EPFactory.m in Sources */,
 				B3C35AD4205B9B4300B1B130 /* EPScrollCell.m in Sources */,

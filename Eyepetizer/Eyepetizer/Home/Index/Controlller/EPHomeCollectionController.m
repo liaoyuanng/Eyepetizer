@@ -11,6 +11,8 @@
 #import "EPScrollCell.h"
 #import "EPTextOnlyCell.h"
 #import "EPNormalCell.h"
+#import "EPBannerCell.h"
+#import "EPVideoCell.h"
 
 @interface EPHomeCollectionController ()
 
@@ -33,8 +35,8 @@
     [self.collectionView registerClass:[EPTextOnlyCell class] forCellWithReuseIdentifier:EPCellTypeTextCard];
     [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:EPCellTypeSquareCard];
     [self.collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellTypeVideoSmallCard];
+    [self.collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
+    [self.collectionView registerClass:[EPVideoCell class] forCellWithReuseIdentifier:EPCellTypeVideoSmallCard];
     
     [self configData];
 }

@@ -26,6 +26,8 @@
 
 @property (nonatomic, strong) UIImageView *badgeImageView;
 
+@property (nonatomic, strong) UIImageView *authImageView;
+
 @property (nonatomic, strong) UIView *bottomLine;
 
 @property (nonatomic, strong, readwrite) RACSignal *share;
@@ -51,6 +53,7 @@
     [self addSubview:self.coverImageView];
     [self addSubview:self.badgeImageView];
     [self addSubview:self.avatorImageView];
+    [self addSubview:self.authImageView];
     [self addSubview:self.bottomLine];
     [self addConstraint];
 }
@@ -94,6 +97,11 @@
         make.size.mas_equalTo(CGSizeMake(48, 48));
     }];
     
+    [self.authImageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.right.bottom.equalTo(self.avatorImageView);
+        make.size.mas_equalTo(CGSizeMake(11, 11));
+    }];
+    
     [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.coverImageView);
         make.bottom.equalTo(self);
@@ -122,8 +130,8 @@
 - (UIButton *)shareBtn {
     if (!_shareBtn) {
         _shareBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _shareBtn.alpha = 0.6;
-        [_shareBtn setImage:ImageNamed(@"nav_share") forState:UIControlStateNormal];
+//        _shareBtn.alpha = 0.6;
+        [_shareBtn setImage:ImageNamed(@"action_share_grey") forState:UIControlStateNormal];
         self.share = [_shareBtn rac_signalForControlEvents:UIControlEventTouchUpInside];
     }
     return _shareBtn;
@@ -173,7 +181,7 @@
         _avatorImageView = [UIImageView new];
         _avatorImageView.layer.cornerRadius = 20.f;
         _avatorImageView.layer.masksToBounds = true;
-        _avatorImageView.backgroundColor = RGB(237, 237, 237);
+        _avatorImageView.backgroundColor = PlaceHolderColor;
     }
     return _avatorImageView;
 }
@@ -185,10 +193,18 @@
     return _badgeImageView;
 }
 
+- (UIImageView *)authImageView {
+    if (!_authImageView) {
+        _authImageView = [UIImageView new];
+        _authImageView.image = ImageNamed(@"author_avatar_v");
+    }
+    return _authImageView;
+}
+
 - (UIView *)bottomLine {
     if (!_bottomLine) {
         _bottomLine = [UIView new];
-        _bottomLine.backgroundColor = RGB(237, 237, 237);
+        _bottomLine.backgroundColor = PlaceHolderColor;
     }
     return _bottomLine;
 }
