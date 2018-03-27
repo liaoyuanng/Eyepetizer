@@ -117,11 +117,15 @@
     self.descriptionLabel.text = model.data.header.desc;
     self.avatorImageView.yy_imageURL = URL(model.data.header.icon);
     self.coverImageView.yy_imageURL = URL(model.data.content.data.cover.feed);
+    if ([model.data.content.data.library isEqualToString:@"DAILY"]) {
+        self.badgeImageView.hidden = NO;
+    } else {
+        self.badgeImageView.hidden = YES;
+    }
 }
 
-- (void)setHideLine:(BOOL)hideLine {
-    _hideLine = hideLine;
-    self.bottomLine.hidden = hideLine;
+- (void)setLineHidden:(BOOL)isHide {
+    self.bottomLine.hidden = isHide;
 }
 
 #pragma mark - lazy load

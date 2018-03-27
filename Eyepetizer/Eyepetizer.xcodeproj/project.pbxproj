@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21F5771A8899267C3B2FE5F2 /* libPods-EyepetizerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */; };
-		B34D90D5206108CA001131F9 /* EPScrollCellAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */; };
+		B34D90D5206108CA001131F9 /* EPEmbeddedCellAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = B34D90D4206108CA001131F9 /* EPEmbeddedCellAgent.m */; };
 		B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */; };
 		B36550D42058F05900DB6E70 /* EPCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */; };
 		B36550D72058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF in Resources */ = {isa = PBXBuildFile; fileRef = B36550D52058F46C00DB6E70 /* FZLTXIHJW--GB1-0.TTF */; };
@@ -55,6 +55,8 @@
 		B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3B2052714A00B654AF /* EPConst.h */; };
 		B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */; };
 		B3D883C62069E55300330067 /* EPVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883C52069E55300330067 /* EPVideoCell.m */; };
+		B3D883C9206A291400330067 /* EPBannerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883C8206A291400330067 /* EPBannerCollectionCell.m */; };
+		B3D883CF206A326D00330067 /* EPBriefCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883CE206A326D00330067 /* EPBriefCardCell.m */; };
 		EE48B9B9DA8F519FA7CB3356 /* libPods-Eyepetizer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */; };
 		FFF3B22AE5CF3431142D8614 /* libPods-EyepetizerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08DC57499C6B7D1F869009E2 /* libPods-EyepetizerTests.a */; };
 /* End PBXBuildFile section */
@@ -83,8 +85,8 @@
 		609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eyepetizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.release.xcconfig"; sourceTree = "<group>"; };
 		A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests.release.xcconfig"; sourceTree = "<group>"; };
-		B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPScrollCellAgent.h; sourceTree = "<group>"; };
-		B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPScrollCellAgent.m; sourceTree = "<group>"; };
+		B34D90D3206108CA001131F9 /* EPEmbeddedCellAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPEmbeddedCellAgent.h; sourceTree = "<group>"; };
+		B34D90D4206108CA001131F9 /* EPEmbeddedCellAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPEmbeddedCellAgent.m; sourceTree = "<group>"; };
 		B36550CF2058EFB600DB6E70 /* EPCategoryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListViewController.h; sourceTree = "<group>"; };
 		B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPCategoryListViewController.m; sourceTree = "<group>"; };
 		B36550D22058F05900DB6E70 /* EPCategoryTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryTableViewCell.h; sourceTree = "<group>"; };
@@ -172,6 +174,10 @@
 		B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationView.m; sourceTree = "<group>"; };
 		B3D883C42069E55300330067 /* EPVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPVideoCell.h; sourceTree = "<group>"; };
 		B3D883C52069E55300330067 /* EPVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPVideoCell.m; sourceTree = "<group>"; };
+		B3D883C7206A291400330067 /* EPBannerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPBannerCollectionCell.h; sourceTree = "<group>"; };
+		B3D883C8206A291400330067 /* EPBannerCollectionCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPBannerCollectionCell.m; sourceTree = "<group>"; };
+		B3D883CD206A326D00330067 /* EPBriefCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPBriefCardCell.h; sourceTree = "<group>"; };
+		B3D883CE206A326D00330067 /* EPBriefCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPBriefCardCell.m; sourceTree = "<group>"; };
 		B5D1A8371A8700C5C43DDE59 /* Pods-EyepetizerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerUITests/Pods-EyepetizerUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		CA366A0C3C99295978DE6DBB /* Pods-Eyepetizer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.debug.xcconfig"; sourceTree = "<group>"; };
 		F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-EyepetizerUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -312,8 +318,8 @@
 			isa = PBXGroup;
 			children = (
 				B37102F52068A37E0051B616 /* EPHomeCellProtocol.h */,
-				B34D90D3206108CA001131F9 /* EPScrollCellAgent.h */,
-				B34D90D4206108CA001131F9 /* EPScrollCellAgent.m */,
+				B34D90D3206108CA001131F9 /* EPEmbeddedCellAgent.h */,
+				B34D90D4206108CA001131F9 /* EPEmbeddedCellAgent.m */,
 				B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */,
 				B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */,
 				B383415E2062484A004F9198 /* EPHomeCategoryListModel.h */,
@@ -529,6 +535,10 @@
 				B37102FC206910790051B616 /* EPBannerCell.m */,
 				B3D883C42069E55300330067 /* EPVideoCell.h */,
 				B3D883C52069E55300330067 /* EPVideoCell.m */,
+				B3D883CD206A326D00330067 /* EPBriefCardCell.h */,
+				B3D883CE206A326D00330067 /* EPBriefCardCell.m */,
+				B3D883C7206A291400330067 /* EPBannerCollectionCell.h */,
+				B3D883C8206A291400330067 /* EPBannerCollectionCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -828,7 +838,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */,
-				B34D90D5206108CA001131F9 /* EPScrollCellAgent.m in Sources */,
+				B34D90D5206108CA001131F9 /* EPEmbeddedCellAgent.m in Sources */,
 				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
 				B383416320624EDA004F9198 /* EPHomeCollectionViewModel.m in Sources */,
 				B383415D20620F06004F9198 /* EPHomeCollectionController.m in Sources */,
@@ -837,6 +847,7 @@
 				B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */,
 				B38341602062484A004F9198 /* EPHomeCategoryListModel.m in Sources */,
 				B3D03C9D205A4D4B00702334 /* EPSearchViewController.m in Sources */,
+				B3D883C9206A291400330067 /* EPBannerCollectionCell.m in Sources */,
 				B38D48CA2056647E00C74E31 /* LYNetworkError.m in Sources */,
 				B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */,
 				B3D883C62069E55300330067 /* EPVideoCell.m in Sources */,
@@ -852,6 +863,7 @@
 				B3C35AD1205B9B2200B1B130 /* EPTextOnlyCell.m in Sources */,
 				B3C35ACE205B9B1800B1B130 /* EPNormalCell.m in Sources */,
 				B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */,
+				B3D883CF206A326D00330067 /* EPBriefCardCell.m in Sources */,
 				B3D3ED2F205265FF00B654AF /* EPNotificationViewController.m in Sources */,
 				B3D3ED322052660900B654AF /* EPMineViewController.m in Sources */,
 				B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */,

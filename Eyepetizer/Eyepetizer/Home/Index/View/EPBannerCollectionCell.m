@@ -1,21 +1,16 @@
 //
-//  EPScrollCell.m
+//  EPBannerCollectionCell.m
 //  Eyepetizer
 //
-//  Created by Ju Liaoyuan on 2018/3/16.
+//  Created by Ju Liaoyuan on 2018/3/27.
 //  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
-#import "EPScrollCell.h"
-#import "EPNormalCell.h"
-#import "EPBannerCell.h"
+#import "EPBannerCollectionCell.h"
 #import "EPEmbeddedCellAgent.h"
+#import "EPBannerCell.h"
 
-@interface EPScrollCell ()
-
-@property (nonatomic, strong) UILabel *dateLabel;
-
-@property (nonatomic, strong) UIButton *title;
+@interface EPBannerCollectionCell ()
 
 @property (nonatomic, strong) UIView *bottomLine;
 
@@ -25,8 +20,7 @@
 
 @end
 
-@implementation EPScrollCell
-
+@implementation EPBannerCollectionCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -43,54 +37,31 @@
 }
 
 - (void)initUI {
-    [self addSubview:self.dateLabel];
-    [self addSubview:self.title];
     [self addSubview:self.collectionView];
     [self addSubview:self.bottomLine];
     [self addConstraint];
 }
 
 - (void)addConstraint {
-    [self.dateLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-15);
-        make.top.equalTo(self).offset(35);
-        make.height.equalTo(@15);
-    }];
-    
-    [self.title mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.equalTo(self.dateLabel);
-        make.top.equalTo(self.dateLabel.mas_bottom);
-    }];
-    
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
-        make.size.mas_equalTo(CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58 + 70 + 15));
-        make.top.equalTo(self.title.mas_bottom);
+        make.size.mas_equalTo(CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58));
+        make.top.equalTo(self);
     }];
     
     [self.bottomLine mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self).offset(10);
         make.right.equalTo(self).offset(-10);
-        make.top.equalTo(self.collectionView.mas_bottom).offset(8);
+        make.bottom.equalTo(self.collectionView);
         make.height.equalTo(@(1 / [UIScreen mainScreen].scale));
     }];
 }
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-    
-    // re layout buttom's image and title. label on left and image on right.
-    self.title.imageEdgeInsets = UIEdgeInsetsMake(0, self.title.titleLabel.frame.size.width, 0, 0);
-    self.title.titleEdgeInsets = UIEdgeInsetsMake(0, -self.title.imageView.frame.size.width, 0, 0);
-}
 
 - (void)bindModel:(EPHomeCollectionViewModel *)model {
-    self.dateLabel.text = model.data.header.subTitle;
-    self.title.titleLabel.font = [[EPConfigurationManager manager] fontWithKey:model.data.header.font size:27.f];
-    [self.title setTitle:model.data.header.title forState:UIControlStateNormal];
     self.agent.dataSource = model.data.itemList;
 }
+
 
 #pragma mark - lazy load
 #pragma mark -
@@ -109,29 +80,10 @@
         _collectionView.pagingEnabled = YES;
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.showsHorizontalScrollIndicator = NO;
-        [_collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:EPCellTypeSubFollowCard];
         [_collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     }
     return _collectionView;
-}
-
-- (UILabel *)dateLabel {
-    if (!_dateLabel) {
-        _dateLabel = [EPFactory labelWithText:nil textColor:RGB(136, 136, 136) font:[UIFont fontWithName:@"DIN Condensed" size:15.f]];
-    }
-    return _dateLabel;
-}
-
-- (UIButton *)title {
-    if (!_title) {
-        _title = [UIButton buttonWithType:UIButtonTypeCustom];
-        [_title setTitleColor:RGB(51, 51, 51) forState:UIControlStateNormal];
-        _title.titleLabel.font = FZFontSize(30);
-        _title.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
-        [_title setImage:ImageNamed(@"action_more_black") forState:UIControlStateNormal];
-    }
-    return _title;
 }
 
 - (UIView *)bottomLine {

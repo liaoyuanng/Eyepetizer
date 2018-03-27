@@ -5,8 +5,6 @@
 
 @interface LYNetworkError : NSError
 
-@property (nonatomic, assign) NSInteger code;
-
 @property (nonatomic, copy) NSString *message;
 
 @property (nonatomic, strong) id response;

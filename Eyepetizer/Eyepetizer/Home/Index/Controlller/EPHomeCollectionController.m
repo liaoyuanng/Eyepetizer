@@ -13,6 +13,8 @@
 #import "EPNormalCell.h"
 #import "EPBannerCell.h"
 #import "EPVideoCell.h"
+#import "EPBannerCollectionCell.h"
+#import "EPBriefCardCell.h"
 
 @interface EPHomeCollectionController ()
 
@@ -37,7 +39,9 @@
     [self.collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
     [self.collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
     [self.collectionView registerClass:[EPVideoCell class] forCellWithReuseIdentifier:EPCellTypeVideoSmallCard];
-    
+    [self.collectionView registerClass:[EPBannerCollectionCell class] forCellWithReuseIdentifier:EPCellTypeHorizontalScroll];
+    [self.collectionView registerClass:[EPBriefCardCell class] forCellWithReuseIdentifier:EPCellTypeBriefCard];
+    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     [self configData];
 }
 
@@ -72,8 +76,12 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    EPScrollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.dataSource[indexPath.row].type forIndexPath:indexPath];
-    NSLog(@"%@",self.dataSource[indexPath.row].type);
+    if (![[EPConfigurationManager manager] verificationCellType:self.dataSource[indexPath.row].type]) {
+        NSLog(@"%@ does not exist", self.dataSource[indexPath.row].type);
+        UICollectionViewCell *unknow = [collectionView dequeueReusableCellWithReuseIdentifier:EPCellUnknowType forIndexPath:indexPath];
+        return unknow;
+    }
+    UICollectionViewCell<EPHomeCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.dataSource[indexPath.row].type forIndexPath:indexPath];
     [cell bindModel:self.dataSource[indexPath.row]];
     return cell;
 }

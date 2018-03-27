@@ -13,6 +13,4 @@
 
 @property (nonatomic, strong, readonly) RACSignal *share;
 
-@property (nonatomic, assign) BOOL hideLine;
-
 @end

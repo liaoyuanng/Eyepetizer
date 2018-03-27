@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface EPScrollCellAgent : NSObject<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@class EPHomeCollectionViewModel;
+
+@interface EPEmbeddedCellAgent : NSObject<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (nonatomic, weak) UICollectionView *customer;
 
-@property (nonatomic, copy) NSArray *dataSource;
+@property (nonatomic, copy) NSArray<EPHomeCollectionViewModel *> *dataSource;
 
 @end

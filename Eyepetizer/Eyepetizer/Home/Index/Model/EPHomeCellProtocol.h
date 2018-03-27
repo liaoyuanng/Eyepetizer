@@ -12,7 +12,11 @@
 
 @protocol EPHomeCellProtocol
 
+@optional
+
 - (void)bindModel:(EPHomeCollectionViewModel *)model;
+
+- (void)setLineHidden:(BOOL)isHide;
 
 @end
 

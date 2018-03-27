@@ -73,6 +73,8 @@
 
 @property (nonatomic, strong) EPHomeCollectionViewModel_Content *content;
 
+@property (nonatomic, copy) NSString *icon;
+
 @end
 
 ////////////////////////////////////////////////////////////////////////////////////

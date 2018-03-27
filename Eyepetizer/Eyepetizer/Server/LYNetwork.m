@@ -5,14 +5,8 @@
 
 #import "LYNetwork.h"
 #import <AFNetworking/AFNetworking.h>
-//#import <JSONModel/JSONModel.h>
-//#import "NSDictionary+NBDictionaryToString.h"
-//#import "UIViewController+LYActive.h"
-//#import <Toast/UIView+Toast.h>
 #import "LYNetworkMacro.h"
 #import "LYNetworkParameter.h"
-//#import "NSData+Base64.h"
-//#import <SVProgressHUD.h>
 
  NSString * const LYNetworkErrorMessage = @"com.ly.network.error.message";
  NSString * const LYNetworkErrorResponse = @"com.ly.network.error.response";
@@ -89,9 +83,7 @@
             if (REQUEST_SUCCESS) {
                 !completion ? : completion(responseObject);
             } else if ([responseObject[@"status"] integerValue] == HTTP_TOEKN_INVALID){
-//                [[LYUserCenter defaultCenter] logout];
-//                LYLoginViewController *loginVC = (LYLoginViewController *)[UIViewController activeViewController];
-//                [loginVC.view makeToast:@"登录已失效，请重新登录" duration:1.f position:[NSValue valueWithCGPoint:CGPointMake(ScreenWidth / 2, ScreenHeight - 150)]];
+
             } else {
                 NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:[responseObject[@"errorCode"] integerValue] userInfo:@{LYNetworkErrorMessage:responseObject[@"errorMessage"],LYNetworkErrorResponse:responseObject}];
                 !failure ? : failure(error);

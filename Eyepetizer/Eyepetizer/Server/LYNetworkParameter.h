@@ -67,7 +67,7 @@ NS_ASSUME_NONNULL_BEGIN
 /**
  replace an old value by new value.
  */
-- (void)replaceValue:(id)newValue oldValue:(id)oldValue;
+//- (void)replaceValue:(id)newValue oldValue:(id)oldValue;
 
 /**
  replace value by key
