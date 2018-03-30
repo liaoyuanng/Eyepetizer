@@ -26,9 +26,11 @@
 		B38D48CB2056647E00C74E31 /* LYNetworkParameter.m in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C420565DA600C74E31 /* LYNetworkParameter.m */; };
 		B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C120565DA600C74E31 /* LYNetworkHeader.h */; };
 		B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C220565DA600C74E31 /* LYNetworkMacro.h */; };
+		B3C29F2D206DD724006F9AEA /* EPVideoBriefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C29F2C206DD724006F9AEA /* EPVideoBriefCell.m */; };
+		B3C29F30206DD966006F9AEA /* EPScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C29F2F206DD966006F9AEA /* EPScrollFlowLayout.m */; };
 		B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */; };
 		B3C35AC8205B776100B1B130 /* EPSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AC7205B776100B1B130 /* EPSearchModel.m */; };
-		B3C35ACE205B9B1800B1B130 /* EPNormalCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35ACD205B9B1800B1B130 /* EPNormalCell.m */; };
+		B3C35ACE205B9B1800B1B130 /* EPFollowCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35ACD205B9B1800B1B130 /* EPFollowCardCell.m */; };
 		B3C35AD1205B9B2200B1B130 /* EPTextOnlyCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */; };
 		B3C35AD4205B9B4300B1B130 /* EPScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */; };
 		B3C35AD7205BA90D00B1B130 /* EPFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AD6205BA90D00B1B130 /* EPFactory.m */; };
@@ -117,12 +119,16 @@
 		B38D48C420565DA600C74E31 /* LYNetworkParameter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LYNetworkParameter.m; sourceTree = "<group>"; };
 		B38D48C6205660C900C74E31 /* EPHomeNavigationViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationViewModel.h; sourceTree = "<group>"; };
 		B38D48C7205660C900C74E31 /* EPHomeNavigationViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationViewModel.m; sourceTree = "<group>"; };
+		B3C29F2B206DD724006F9AEA /* EPVideoBriefCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPVideoBriefCell.h; sourceTree = "<group>"; };
+		B3C29F2C206DD724006F9AEA /* EPVideoBriefCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPVideoBriefCell.m; sourceTree = "<group>"; };
+		B3C29F2E206DD966006F9AEA /* EPScrollFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPScrollFlowLayout.h; sourceTree = "<group>"; };
+		B3C29F2F206DD966006F9AEA /* EPScrollFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPScrollFlowLayout.m; sourceTree = "<group>"; };
 		B3C35AC3205B698900B1B130 /* UINavigationBar+EPFixed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+EPFixed.h"; sourceTree = "<group>"; };
 		B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+EPFixed.m"; sourceTree = "<group>"; };
 		B3C35AC6205B776100B1B130 /* EPSearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchModel.h; sourceTree = "<group>"; };
 		B3C35AC7205B776100B1B130 /* EPSearchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPSearchModel.m; sourceTree = "<group>"; };
-		B3C35ACC205B9B1800B1B130 /* EPNormalCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNormalCell.h; sourceTree = "<group>"; };
-		B3C35ACD205B9B1800B1B130 /* EPNormalCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNormalCell.m; sourceTree = "<group>"; };
+		B3C35ACC205B9B1800B1B130 /* EPFollowCardCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPFollowCardCell.h; sourceTree = "<group>"; };
+		B3C35ACD205B9B1800B1B130 /* EPFollowCardCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPFollowCardCell.m; sourceTree = "<group>"; };
 		B3C35ACF205B9B2200B1B130 /* EPTextOnlyCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPTextOnlyCell.h; sourceTree = "<group>"; };
 		B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPTextOnlyCell.m; sourceTree = "<group>"; };
 		B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPScrollCell.h; sourceTree = "<group>"; };
@@ -326,6 +332,8 @@
 				B383415F2062484A004F9198 /* EPHomeCategoryListModel.m */,
 				B383416120624EDA004F9198 /* EPHomeCollectionViewModel.h */,
 				B383416220624EDA004F9198 /* EPHomeCollectionViewModel.m */,
+				B3C29F2E206DD966006F9AEA /* EPScrollFlowLayout.h */,
+				B3C29F2F206DD966006F9AEA /* EPScrollFlowLayout.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -527,8 +535,8 @@
 				B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */,
 				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
 				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
-				B3C35ACC205B9B1800B1B130 /* EPNormalCell.h */,
-				B3C35ACD205B9B1800B1B130 /* EPNormalCell.m */,
+				B3C35ACC205B9B1800B1B130 /* EPFollowCardCell.h */,
+				B3C35ACD205B9B1800B1B130 /* EPFollowCardCell.m */,
 				B3C35ACF205B9B2200B1B130 /* EPTextOnlyCell.h */,
 				B3C35AD0205B9B2200B1B130 /* EPTextOnlyCell.m */,
 				B37102FB206910790051B616 /* EPBannerCell.h */,
@@ -539,6 +547,8 @@
 				B3D883CE206A326D00330067 /* EPBriefCardCell.m */,
 				B3D883C7206A291400330067 /* EPBannerCollectionCell.h */,
 				B3D883C8206A291400330067 /* EPBannerCollectionCell.m */,
+				B3C29F2B206DD724006F9AEA /* EPVideoBriefCell.h */,
+				B3C29F2C206DD724006F9AEA /* EPVideoBriefCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -842,6 +852,7 @@
 				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
 				B383416320624EDA004F9198 /* EPHomeCollectionViewModel.m in Sources */,
 				B383415D20620F06004F9198 /* EPHomeCollectionController.m in Sources */,
+				B3C29F30206DD966006F9AEA /* EPScrollFlowLayout.m in Sources */,
 				B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */,
 				B38D48C92056647E00C74E31 /* LYNetwork.m in Sources */,
 				B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */,
@@ -861,7 +872,7 @@
 				B3C35AC8205B776100B1B130 /* EPSearchModel.m in Sources */,
 				B3D03CAA205A7B4B00702334 /* EPHotSpotTableViewCell.m in Sources */,
 				B3C35AD1205B9B2200B1B130 /* EPTextOnlyCell.m in Sources */,
-				B3C35ACE205B9B1800B1B130 /* EPNormalCell.m in Sources */,
+				B3C35ACE205B9B1800B1B130 /* EPFollowCardCell.m in Sources */,
 				B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */,
 				B3D883CF206A326D00330067 /* EPBriefCardCell.m in Sources */,
 				B3D3ED2F205265FF00B654AF /* EPNotificationViewController.m in Sources */,
@@ -870,6 +881,7 @@
 				B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */,
 				B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */,
 				B37102F82068A7710051B616 /* EPConfigurationManager.m in Sources */,
+				B3C29F2D206DD724006F9AEA /* EPVideoBriefCell.m in Sources */,
 				B37102FD206910790051B616 /* EPBannerCell.m in Sources */,
 				B3D3ECEE205257D800B654AF /* AppDelegate.m in Sources */,
 				B36550DD20592CE900DB6E70 /* EPCategoryListModel.m in Sources */,

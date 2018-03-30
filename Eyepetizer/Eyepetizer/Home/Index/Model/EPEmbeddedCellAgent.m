@@ -7,14 +7,24 @@
 //
 
 #import "EPEmbeddedCellAgent.h"
-#import "EPNormalCell.h"
+#import "EPFollowCardCell.h"
 #import "EPHomeCollectionViewModel.h"
 
 @interface EPEmbeddedCellAgent ()
 
+@property (nonatomic, assign) NSInteger index;
+
 @end
 
 @implementation EPEmbeddedCellAgent
+
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.index = 0;
+    }
+    return self;
+}
 
 - (void)setDataSource:(NSArray *)dataSource {
     _dataSource = dataSource;
@@ -27,13 +37,11 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    if (![[EPConfigurationManager manager] verificationCellType:self.dataSource[indexPath.row].type]) {
-        NSLog(@"%@ does not exist", self.dataSource[indexPath.row].type);
-        UICollectionViewCell *unknow = [collectionView dequeueReusableCellWithReuseIdentifier:EPCellUnknowType forIndexPath:indexPath];
-        return unknow;
-    }
-    
-    UICollectionViewCell<EPHomeCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.dataSource[indexPath.row].data.dataType forIndexPath:indexPath];
+//    if (![[EPConfigurationManager manager] verificationCellType:self.dataSource[indexPath.row].type]) {
+//        UICollectionViewCell *unknow = [collectionView dequeueReusableCellWithReuseIdentifier:EPCellUnknowType forIndexPath:indexPath];
+//        return unknow;
+//    }
+    UICollectionViewCell<EPHomeCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.dataSource[indexPath.row].type forIndexPath:indexPath];
     if ([cell respondsToSelector:@selector(setLineHidden:)]) {
         [cell setLineHidden:YES];
     }
@@ -42,9 +50,28 @@
 }
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"%@",self.dataSource[indexPath.row].data.dataType);
-    return CGSizeMake(ScreenWidth, [[EPConfigurationManager manager] cellHeightByType:self.dataSource[indexPath.row].type]);
+    return [[EPConfigurationManager manager] cellSizeByType:self.dataSource[indexPath.row].type];
 }
 
+// 设置每次滚动的偏移量。
+- (void)scrollViewWillEndDragging:(UIScrollView *)scrollView withVelocity:(CGPoint)velocity targetContentOffset:(inout CGPoint *)targetContentOffset {
+    
+    if (velocity.x == 0) {
+        if ((scrollView.contentOffset.x - (ScreenWidth * 0.928 + 7) * self.index) > 10) {
+            self.index = MIN(self.index + 1, self.dataSource.count - 1);
+        } else {
+            self.index = MAX(self.index - 1, 0);
+        }
+    } else {
+        if (velocity.x > 0) {
+            self.index = MIN(self.index + 1, self.dataSource.count - 1);
+        } else {
+            self.index = MAX(self.index - 1, 0);
+        }
+    }
+    
+    CGPoint newPosition = CGPointMake(self.index * (ScreenWidth * 0.928 + 7), targetContentOffset->y);
+    *targetContentOffset = newPosition;
+}
 
 @end

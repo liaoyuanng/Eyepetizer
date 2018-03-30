@@ -8,7 +8,7 @@
 
 #import "EPFollowViewController.h"
 
-@interface EPFollowViewController ()
+@interface EPFollowViewController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -16,7 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.delegate = self;
     // Do any additional setup after loading the view.
+}
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    
+    [navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {

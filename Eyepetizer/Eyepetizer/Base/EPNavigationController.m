@@ -27,7 +27,7 @@
         [self.navigationBar setShadowImage:[UIImage new]];
         [self.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:UIBarMetricsDefault];
     } else {
-        [self.navigationBar setShadowImage:[UIImage imageWithColor:RGB(237, 237, 237)]];
+        [self.navigationBar setShadowImage:[UIImage imageWithColor:RGB(236, 236, 236)]];
     }
 }
 

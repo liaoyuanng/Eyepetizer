@@ -27,8 +27,7 @@
 - (void)initUI {
     [self addSubview:self.imageView];
     [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-15);
+        make.left.right.equalTo(self);
         make.top.equalTo(self).offset(15);
         make.bottom.equalTo(self).offset(-15);
     }];

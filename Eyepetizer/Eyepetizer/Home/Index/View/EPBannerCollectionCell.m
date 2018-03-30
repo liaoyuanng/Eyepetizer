@@ -9,6 +9,7 @@
 #import "EPBannerCollectionCell.h"
 #import "EPEmbeddedCellAgent.h"
 #import "EPBannerCell.h"
+#import "EPScrollFlowLayout.h"
 
 @interface EPBannerCollectionCell ()
 
@@ -46,6 +47,7 @@
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self);
         make.size.mas_equalTo(CGSizeMake(ScreenWidth, (ScreenWidth - 30) * 0.58));
+//        make.width.equalTo(@(ScreenWidth));
         make.top.equalTo(self);
     }];
     
@@ -69,10 +71,7 @@
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         
-        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
+        EPScrollFlowLayout *layout = [EPScrollFlowLayout new];
         
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.dataSource = self.agent;

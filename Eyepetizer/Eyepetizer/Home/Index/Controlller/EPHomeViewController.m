@@ -11,7 +11,7 @@
 #import "EPHomeNavigationViewModel.h"
 #import "EPCategoryListViewController.h"
 #import "EPSearchViewController.h"
-#import "EPNormalCell.h"
+#import "EPFollowCardCell.h"
 #import "EPTextOnlyCell.h"
 #import "EPScrollCell.h"
 #import "EPHomeCollectionController.h"
@@ -40,7 +40,7 @@
 }
 
 - (void)customNavigationBar {
-    
+
     self.navigationView = [[EPHomeNavigationView alloc] init];
     self.navigationView.frame = self.navigationController.navigationBar.frame;
     self.navigationItem.titleView = self.navigationView;
@@ -64,7 +64,10 @@
     }];
     // category btns action
     [self.navigationView.categorySingal subscribeNext:^(id  _Nullable x) {
-//        NSLog(@"%@",x);
+        @strongify(self);
+        UIButton *btn = (UIButton *)x;
+        self.continerView.contentOffset = CGPointMake(ScreenWidth * (btn.tag - 1000), 0);
+        [self scrollViewDidEndDecelerating:self.continerView];
     }];
     // set continerView content size and default select.
     [self.navigationView.defaultSeleted subscribeNext:^(id  _Nullable x) {
@@ -75,7 +78,6 @@
         [self scrollViewDidEndDecelerating:self.continerView];
         _lastSelected = selected.integerValue;
     }];
-    
     // get data from server
     EPHomeNavigationViewModel *viewModel = [EPHomeNavigationViewModel new];
     [[viewModel.requestCommand execute:nil] subscribeNext:^(id  _Nullable x) {
@@ -104,7 +106,9 @@
 
     NSInteger index = (NSInteger)floor(fabs(scrollView.contentOffset.x) / ScreenWidth);
     
+    // Ignore case.
     if (_lastSelected == index) return;
+    _lastSelected = index;
     
     [self.navigationView updateIndex:index];
     

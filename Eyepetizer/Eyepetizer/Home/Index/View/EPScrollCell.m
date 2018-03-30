@@ -7,9 +7,10 @@
 //
 
 #import "EPScrollCell.h"
-#import "EPNormalCell.h"
+#import "EPFollowCardCell.h"
 #import "EPBannerCell.h"
 #import "EPEmbeddedCellAgent.h"
+#import "EPScrollFlowLayout.h"
 
 @interface EPScrollCell ()
 
@@ -98,18 +99,15 @@
 - (UICollectionView *)collectionView {
     if (!_collectionView) {
         
-        UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        layout.minimumInteritemSpacing = 0;
-        layout.minimumLineSpacing = 0;
-        
+        EPScrollFlowLayout *layout = [[EPScrollFlowLayout alloc] init];;
+
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.dataSource = self.agent;
         _collectionView.delegate = self.agent;
-        _collectionView.pagingEnabled = YES;
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.showsHorizontalScrollIndicator = NO;
-        [_collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:EPCellTypeSubFollowCard];
+        _collectionView.decelerationRate = 0.3;
+        [_collectionView registerClass:[EPFollowCardCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
         [_collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
         [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     }

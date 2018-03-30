@@ -137,8 +137,8 @@ static const NSTimeInterval animationDuration = 0.2;
 }
 
 - (void)updateIndicator:(UIButton *)sender {
-    sender.selected = YES;
     self.lastSelectedBtn.selected = NO;
+    sender.selected = YES;
     
     CGFloat x = 0;
     // 当 sender 的 origin.x + width 小于 当前 scrollView 的显示区域时

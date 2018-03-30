@@ -6,9 +6,9 @@
 //  Copyright © 2018年 StayTrue( https://www.imliaoyuan.com ). All rights reserved.
 //
 
-#import "EPNormalCell.h"
+#import "EPFollowCardCell.h"
 
-@interface EPNormalCell ()
+@interface EPFollowCardCell ()
 
 @property (nonatomic, strong) UIButton *shareBtn;
 
@@ -34,7 +34,7 @@
 
 @end
 
-@implementation EPNormalCell
+@implementation EPFollowCardCell
 
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
@@ -55,14 +55,15 @@
     [self addSubview:self.avatorImageView];
     [self addSubview:self.authImageView];
     [self addSubview:self.bottomLine];
+    
     [self addConstraint];
 }
 
 - (void)addConstraint {
 
     [self.coverImageView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(15);
-        make.right.equalTo(self).offset(-15);
+        make.left.right.equalTo(self);
+//        make.right.equalTo(self).offset(-15);
         make.top.equalTo(self).offset(15);
         make.height.equalTo(self.coverImageView.mas_width).multipliedBy(0.58);
     }];

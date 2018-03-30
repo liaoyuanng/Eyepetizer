@@ -13,11 +13,11 @@ FOUNDATION_EXTERN NSString * const EPCellTypeBanner2;
 FOUNDATION_EXTERN NSString * const EPCellTypeTextCard;
 FOUNDATION_EXTERN NSString * const EPCellTypeSquareCard;
 FOUNDATION_EXTERN NSString * const EPCellTypeFollowCard;
-FOUNDATION_EXTERN NSString * const EPCellTypeSubFollowCard;
 FOUNDATION_EXTERN NSString * const EPCellTypeVideoSmallCard;
 FOUNDATION_EXTERN NSString * const EPCellTypeHorizontalScroll;
 FOUNDATION_EXTERN NSString * const EPCellTypeBriefCard;
 FOUNDATION_EXTERN NSString * const EPCellUnknowType;
+FOUNDATION_EXTERN NSString * const EPCellVideoCollectionWithBrief;
 
 
 @interface EPConfigurationManager : NSObject
@@ -37,7 +37,7 @@ FOUNDATION_EXTERN NSString * const EPCellUnknowType;
 /**
  get cell row height by type
  */
-- (CGFloat)cellHeightByType:(NSString *)type;
+- (CGSize)cellSizeByType:(NSString *)type;
 
 - (BOOL)verificationCellType:(NSString *)type;
 

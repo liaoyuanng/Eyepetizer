@@ -10,7 +10,7 @@
 #import "EPHomeCollectionViewModel.h"
 #import "EPScrollCell.h"
 #import "EPTextOnlyCell.h"
-#import "EPNormalCell.h"
+#import "EPFollowCardCell.h"
 #import "EPBannerCell.h"
 #import "EPVideoCell.h"
 #import "EPBannerCollectionCell.h"
@@ -31,12 +31,12 @@
     
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 0.f;
-    layout.minimumInteritemSpacing = 0;
+    layout.minimumInteritemSpacing = 0.f;
     self.collectionView.collectionViewLayout = layout;
     // regist all style cell
     [self.collectionView registerClass:[EPTextOnlyCell class] forCellWithReuseIdentifier:EPCellTypeTextCard];
     [self.collectionView registerClass:[EPScrollCell class] forCellWithReuseIdentifier:EPCellTypeSquareCard];
-    [self.collectionView registerClass:[EPNormalCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
+    [self.collectionView registerClass:[EPFollowCardCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
     [self.collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
     [self.collectionView registerClass:[EPVideoCell class] forCellWithReuseIdentifier:EPCellTypeVideoSmallCard];
     [self.collectionView registerClass:[EPBannerCollectionCell class] forCellWithReuseIdentifier:EPCellTypeHorizontalScroll];
@@ -72,15 +72,16 @@
 #pragma mark -
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-    return CGSizeMake(ScreenWidth, [[EPConfigurationManager manager] cellHeightByType:self.dataSource[indexPath.row].type]);
+    return [[EPConfigurationManager manager] cellSizeByType:self.dataSource[indexPath.row].type];
+//    return CGSizeMake(ScreenWidth, [[EPConfigurationManager manager] cellHeightByType:self.dataSource[indexPath.row].type]);
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    if (![[EPConfigurationManager manager] verificationCellType:self.dataSource[indexPath.row].type]) {
-        NSLog(@"%@ does not exist", self.dataSource[indexPath.row].type);
-        UICollectionViewCell *unknow = [collectionView dequeueReusableCellWithReuseIdentifier:EPCellUnknowType forIndexPath:indexPath];
-        return unknow;
-    }
+//    if (![[EPConfigurationManager manager] verificationCellType:self.dataSource[indexPath.row].type]) {
+//
+//        UICollectionViewCell *unknow = [collectionView dequeueReusableCellWithReuseIdentifier:EPCellUnknowType forIndexPath:indexPath];
+//        return unknow;
+//    }
     UICollectionViewCell<EPHomeCellProtocol> *cell = [collectionView dequeueReusableCellWithReuseIdentifier:self.dataSource[indexPath.row].type forIndexPath:indexPath];
     [cell bindModel:self.dataSource[indexPath.row]];
     return cell;
@@ -89,7 +90,6 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.dataSource.count;
 }
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

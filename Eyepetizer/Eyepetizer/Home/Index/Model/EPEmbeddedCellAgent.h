@@ -10,7 +10,7 @@
 
 @class EPHomeCollectionViewModel;
 
-@interface EPEmbeddedCellAgent : NSObject<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
+@interface EPEmbeddedCellAgent : NSObject<UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIScrollViewDelegate>
 
 @property (nonatomic, weak) UICollectionView *customer;
 
