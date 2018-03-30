@@ -8,15 +8,18 @@
 
 #import "EPHomeNavigationView.h"
 
-#define BtnWidth 55
 #define UN_SHOW -1000
 
 static const NSTimeInterval animationDuration = 0.2;
 
-@interface EPHomeNavigationView ()
+@interface EPHomeNavigationView () {
+    CGFloat _btnWidth;
+}
 // Why contentView?
 // navigationItem's titleView have a mrigin(4.7 inch is 8px, 5.5 inch is 12px), so we need remove this margin.
 @property (nonatomic, strong) UIView *contentView;
+
+@property (nonatomic, strong) UILabel *titleLabel;
 
 @property (nonatomic, strong) UIButton *menuBtn;
 
@@ -45,16 +48,26 @@ static const NSTimeInterval animationDuration = 0.2;
 @implementation EPHomeNavigationView
 
 - (instancetype)init {
-    self = [super init];
     if (self) {
         [self initUI];
     }
     return self;
 }
+//- (instancetype)initWithFrame:(CGRect)frame {
+//    self = [super initWithFrame:CGRectMake(0, 0, ScreenWidth, 108)];
+//    if (self) {
+//        [self initUI];
+//    }
+//    return self;
+//}
+
+//- (void)setFrame:(CGRect)frame {
+//    // Ignore frame setting.
+//}
 
 - (void)initUI {
     [self addSubview:self.contentView];
-    [self.contentView addSubview:self.menuBtn];
+    [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.categoryView];
     [self.contentView addSubview:self.searchBtn];
     [self.categoryView addSubview:self.indicator];
@@ -63,23 +76,11 @@ static const NSTimeInterval animationDuration = 0.2;
 }
 
 - (void)addConstraint {
-    [self.menuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerY.equalTo(self.contentView);
-        make.left.equalTo(self.contentView);
-        make.size.mas_equalTo(CGSizeMake(44, 44));
-    }];
     
-    [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.right.equalTo(self.contentView);
-        make.centerY.equalTo(self.contentView);
-        make.size.equalTo(self.menuBtn);
-    }];
-    
-    [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.menuBtn.mas_right);
-        make.right.equalTo(self.searchBtn.mas_left);
-        make.centerY.equalTo(self.contentView);
-        make.height.equalTo(self.contentView);
+    [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.right.equalTo(self);
+        make.top.equalTo(self);
+        make.height.equalTo(@(44));
     }];
 }
 #pragma mark - public
@@ -95,8 +96,55 @@ static const NSTimeInterval animationDuration = 0.2;
     [self updateIndicator:btn];
 }
 
+- (void)setType:(EPNavigationViewType)type {
+    _type = type;
+    [self addControlsByType:type];
+}
+
 #pragma mark - private
 #pragma mark -
+
+- (void)addControlsByType:(EPNavigationViewType)type {
+
+    if (type == EPNavigationViewTypeScroll) {
+        // Set btn width.
+        _btnWidth = 55.f;
+        
+        // Add menu btn. Only active in this case.
+        [self.contentView addSubview:self.menuBtn];
+        // Set search btn position.
+        [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView);
+            make.bottom.equalTo(self.contentView);
+            make.size.mas_equalTo(CGSizeMake(44, 44));
+        }];
+        
+        [self.menuBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerY.equalTo(self.contentView);
+            make.left.equalTo(self.contentView);
+            make.size.mas_equalTo(CGSizeMake(44, 44));
+        }];
+        
+        [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.menuBtn.mas_right);
+            make.right.equalTo(self.searchBtn.mas_left);
+            make.centerY.equalTo(self.contentView);
+            make.height.equalTo(self.contentView);
+        }];
+    }
+    
+    if (type == EPNavigationViewTypeNormal) {
+        // Set btn width.
+        _btnWidth = ScreenWidth / 2;
+        
+        // Set search btn position.
+        [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self.contentView);
+            make.centerY.equalTo(self.contentView);
+            make.size.mas_equalTo(CGSizeMake(44, 44));
+        }];
+    }
+}
 
 - (void)createCategoryItems {
     NSArray *category = self.datas[@"tabInfo"][@"tabList"];
@@ -107,7 +155,7 @@ static const NSTimeInterval animationDuration = 0.2;
         EPHomeCategoryListModel *model = [EPHomeCategoryListModel yy_modelWithDictionary:obj];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = 1000 + idx;
-        btn.frame = CGRectMake(idx * BtnWidth, 0, BtnWidth, self.frame.size.height);
+        btn.frame = CGRectMake(idx * _btnWidth, 0, _btnWidth, self.frame.size.height);
         btn.titleLabel.font = FZFontSize(13);
         [btn setTitleColor:RGB(42, 42, 42) forState:UIControlStateSelected];
         [btn setTitleColor:RGB(128, 128, 128) forState:UIControlStateNormal];
@@ -127,7 +175,7 @@ static const NSTimeInterval animationDuration = 0.2;
         }
         [temp_dataSource addObject:model];
     }];
-    self.categoryView.contentSize = CGSizeMake(BtnWidth * category.count, self.categoryView.frame.size.height);
+    self.categoryView.contentSize = CGSizeMake(_btnWidth * category.count, self.categoryView.frame.size.height);
     // free memory.
     self.dataSource = temp_dataSource.copy;
     temp_dataSource = nil;
@@ -142,19 +190,19 @@ static const NSTimeInterval animationDuration = 0.2;
     
     CGFloat x = 0;
     // 当 sender 的 origin.x + width 小于 当前 scrollView 的显示区域时
-    if ((sender.tag - 1000) * BtnWidth < self.categoryView.contentOffset.x + self.categoryView.frame.size.width / 2) {
+    if ((sender.tag - 1000) * _btnWidth < self.categoryView.contentOffset.x + self.categoryView.frame.size.width / 2) {
         // 向右滚动，滚动距离为当前的 sender的中点 - scrllView的中点。
-        x = (sender.tag - 1000 + 0.5) * BtnWidth - self.categoryView.frame.size.width / 2;
+        x = (sender.tag - 1000 + 0.5) * _btnWidth - self.categoryView.frame.size.width / 2;
         // 确保偏移至少为 0.
         x = MAX(x, 0);
     } else {
-        x = (sender.tag - 1000 - 0.5) * BtnWidth + self.categoryView.frame.size.width / 2;
+        x = (sender.tag - 1000 - 0.5) * _btnWidth + self.categoryView.frame.size.width / 2;
         // 确保偏移不能超过 contentsize
-        x = MIN(x, self.categoryView.contentSize.width - BtnWidth);
+        x = MIN(x, self.categoryView.contentSize.width - _btnWidth);
     }
     
     [UIView animateWithDuration:animationDuration animations:^{
-        [self.categoryView scrollRectToVisible:CGRectMake(x, 0, BtnWidth, 44) animated:NO];
+        [self.categoryView scrollRectToVisible:CGRectMake(x, 0, _btnWidth, 44) animated:NO];
     } completion:^(BOOL finished) {
         [UIView animateWithDuration:animationDuration animations:^{
             self.indicator.center = CGPointMake(sender.center.x, 38);
@@ -165,27 +213,27 @@ static const NSTimeInterval animationDuration = 0.2;
 }
 
 // Response to a click event outside the area
-- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
-    
-    CGPoint c_point = [self convertPoint:point toView:[UIApplication sharedApplication].keyWindow];
-    CGRect leftMargin = CGRectMake(0, 0, 4 * [UIScreen mainScreen].scale, 44);
-    CGRect rightMargin = CGRectMake(ScreenWidth - 4 * [UIScreen mainScreen].scale, 0, 4 * [UIScreen mainScreen].scale , 44);
-    
-    if (CGRectContainsPoint(leftMargin, c_point)) {
-        return self.menuBtn;
-    }
-    
-    if (CGRectContainsPoint(rightMargin, c_point)) {
-        return self.searchBtn;
-    }
-    return [super hitTest:point withEvent:event];
-}
+//- (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
+//
+//    CGPoint c_point = [self convertPoint:point toView:[UIApplication sharedApplication].keyWindow];
+//    CGRect leftMargin = CGRectMake(0, 0, 4 * [UIScreen mainScreen].scale, 44);
+//    CGRect rightMargin = CGRectMake(ScreenWidth - 4 * [UIScreen mainScreen].scale, 0, 4 * [UIScreen mainScreen].scale , 44);
+//
+//    if (CGRectContainsPoint(leftMargin, c_point)) {
+//        return self.menuBtn;
+//    }
+//
+//    if (CGRectContainsPoint(rightMargin, c_point)) {
+//        return self.searchBtn;
+//    }
+//    return [super hitTest:point withEvent:event];
+//}
 
 // Fix custom titleView width abnormal for iOS 11.
 // See: https://stackoverflow.com/questions/44932084/ios-11-navigationitem-titleview-width-not-set
-- (CGSize)intrinsicContentSize {
-    return UILayoutFittingExpandedSize;
-}
+//- (CGSize)intrinsicContentSize {
+//    return UILayoutFittingExpandedSize;
+//}
 
 #pragma mark - lazy load
 #pragma mark -
@@ -197,6 +245,16 @@ static const NSTimeInterval animationDuration = 0.2;
         _contentView.backgroundColor = RGB(243, 243, 243);
     }
     return _contentView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = [EPFactory label];
+        _titleLabel.text = @"Subscription";
+        _titleLabel.font = [UIFont fontWithName:@"Lobster" size:20];
+        _titleLabel.textColor = RGB(0, 0, 0);
+    }
+    return _titleLabel;
 }
 
 - (UIButton *)menuBtn {

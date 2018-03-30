@@ -9,6 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "EPHomeCategoryListModel.h"
 
+typedef NS_ENUM(NSInteger, EPNavigationViewType) {
+    EPNavigationViewTypeScroll,
+    EPNavigationViewTypeNormal
+};
+
 @interface EPHomeNavigationView : UIView
 
 /**
@@ -30,6 +35,8 @@
  update UI, set total of category items, and default select index.
  */
 @property (nonatomic, strong, readonly) RACSubject *defaultSeleted;
+
+@property (nonatomic, assign) EPNavigationViewType type;    // 'EPNavigationViewTypeNormal' by default.
 
 @property (nonatomic, copy, readonly) NSArray<EPHomeCategoryListModel *> *dataSource;
 

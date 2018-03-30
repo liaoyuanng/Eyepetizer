@@ -9,7 +9,7 @@
 #import "EPNavigationController.h"
 #import "UIImage+EPColor.h"
 
-@interface EPNavigationController ()
+@interface EPNavigationController ()<UINavigationControllerDelegate>
 
 @end
 
@@ -18,6 +18,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lineHidden = NO;
+   
     self.navigationBar.barTintColor = RGB(243, 243, 243);
 }
 
@@ -30,6 +31,13 @@
         [self.navigationBar setShadowImage:[UIImage imageWithColor:RGB(236, 236, 236)]];
     }
 }
+
+// hide navigation bar when view appear.
+//- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+//    
+//    [self setNavigationBarHidden:YES animated:YES];
+//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

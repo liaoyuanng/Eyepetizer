@@ -40,10 +40,14 @@
 }
 
 - (void)customNavigationBar {
-
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
+    self.automaticallyAdjustsScrollViewInsets = NO; // 取消 64pt 的位移
+//    self.edgesForExtendedLayout = UIRectEdgeTop;
     self.navigationView = [[EPHomeNavigationView alloc] init];
-    self.navigationView.frame = self.navigationController.navigationBar.frame;
-    self.navigationItem.titleView = self.navigationView;
+    self.navigationView.frame = CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width, 64);
+    self.navigationView.type = EPNavigationViewTypeScroll;
+    [self.view addSubview:self.navigationView];
 }
 
 - (void)fetchData {
@@ -92,7 +96,7 @@
 - (void)initUI {
     
     self.continerView = [[UIScrollView alloc] init];
-    self.continerView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-44);
+    self.continerView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-44-64);
     self.continerView.backgroundColor = UIColor.whiteColor;
     self.continerView.pagingEnabled = YES;
     self.continerView.delegate = self;

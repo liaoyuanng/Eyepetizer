@@ -21,10 +21,13 @@
     // Do any additional setup after loading the view.
 }
 
+// hide navigation bar when view appear.
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     
     [navigationController setNavigationBarHidden:YES animated:YES];
 }
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
