@@ -11,4 +11,6 @@
 
 @interface EPVideoBriefCell : UICollectionViewCell<EPHomeCellProtocol>
 
+@property (nonatomic, strong) RACSignal *followAction;
+
 @end

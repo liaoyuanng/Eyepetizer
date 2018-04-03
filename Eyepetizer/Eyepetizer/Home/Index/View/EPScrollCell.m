@@ -109,7 +109,7 @@
         _collectionView.decelerationRate = 0.3;
         [_collectionView registerClass:[EPFollowCardCell class] forCellWithReuseIdentifier:EPCellTypeFollowCard];
         [_collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
+//        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     }
     return _collectionView;
 }
