@@ -31,7 +31,7 @@ static inline NSDictionary *cellHeightMap() {
              EPCellTypeFollowCard:@(CGSizeMake(ScreenWidth * 0.928, 70.f + 15.f + 0.58 * (ScreenWidth - 30))),
              EPCellTypeHorizontalScroll:@(CGSizeMake(ScreenWidth, 0.58 * (ScreenWidth - 30))),
              EPCellTypeBriefCard:@(CGSizeMake(ScreenWidth, 72)),
-             EPCellUnknowType:@(CGSizeMake(ScreenWidth, 10))};
+             EPCellVideoCollectionWithBrief:@(CGSizeMake(ScreenWidth, 100))};
 }
 
 @implementation EPConfigurationManager

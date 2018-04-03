@@ -26,6 +26,8 @@ static const NSTimeInterval animationDuration = 0.2;
 
 @property (nonatomic, strong) UIView *indicator;
 
+@property (nonatomic, strong) UIView *effectView;
+
 @property (nonatomic, strong, readwrite) RACSignal *menuSignal;
 
 @property (nonatomic, strong, readwrite) RACSignal *searchSignal;
@@ -45,7 +47,16 @@ static const NSTimeInterval animationDuration = 0.2;
 @implementation EPNavigationView
 
 - (instancetype)init {
-    self = [super init];
+//    self = [super init];
+//    if (self) {
+//        [self initUI];
+//    }
+//    return self;
+    return [self initWithFrame:CGRectZero];
+}
+
+- (instancetype)initWithFrame:(CGRect)frame {
+    self = [super initWithFrame:frame];
     if (self) {
         [self initUI];
     }
@@ -54,16 +65,15 @@ static const NSTimeInterval animationDuration = 0.2;
 
 - (void)initUI {
     self.type = EPNavigationViewTypeNormal;
-
-    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
-    UIVisualEffectView *effectView = [[UIVisualEffectView alloc] initWithEffect:blur];
-    effectView.frame = CGRectMake(0, 0, ScreenWidth, 64);
     
-    [self addSubview:effectView];
+    UIBlurEffect *blur = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+    self.effectView = [[UIVisualEffectView alloc] initWithEffect:blur];
+    [self addSubview:self.effectView];
+    
     [self addSubview:self.searchBtn];
+    [self addSubview:self.categoryView];
     [self.categoryView addSubview:self.indicator];
 }
-
 #pragma mark - public
 #pragma mark -
 
@@ -82,8 +92,10 @@ static const NSTimeInterval animationDuration = 0.2;
 
 
 - (void)layoutSubviews {
-    
     [super layoutSubviews];
+    
+    // set effect frame.
+    self.effectView.frame = CGRectMake(0, 0, ScreenWidth, self.ep_height);
     
     if (self.type == EPNavigationViewTypeScroll) {
         // Set btn width.
@@ -91,7 +103,6 @@ static const NSTimeInterval animationDuration = 0.2;
         
         // Add menu btn. Only active in this case.
         [self addSubview:self.menuBtn];
-        [self addSubview:self.categoryView];
         
         // Set search btn position.
         [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -115,20 +126,22 @@ static const NSTimeInterval animationDuration = 0.2;
     }
     
     if (self.type == EPNavigationViewTypeNormal) {
-        // Set btn width.
+        
         _btnWidth = ScreenWidth / 2;
         
         [self addSubview:self.titleLabel];
         // Set search btn position.
-        [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.right.centerY.equalTo(self);
-            make.size.mas_equalTo(CGSizeMake(44, 44));
-        }];
         
         [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.right.equalTo(self);
             make.top.equalTo(self);
-            make.height.equalTo(@(44));
+            make.height.equalTo(@(64));
+        }];
+        
+        [self.searchBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.equalTo(self);
+            make.size.mas_equalTo(CGSizeMake(44, 44));
+            make.bottom.equalTo(self.titleLabel);
         }];
         
         [self.categoryView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -149,7 +162,7 @@ static const NSTimeInterval animationDuration = 0.2;
         EPHomeCategoryListModel *model = [EPHomeCategoryListModel yy_modelWithDictionary:obj];
         UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
         btn.tag = 1000 + idx;
-        btn.frame = CGRectMake(idx * _btnWidth, 64 - 44, _btnWidth, 44);
+        btn.frame = CGRectMake(idx * _btnWidth, self.ep_height - 44, _btnWidth, 44);
         btn.titleLabel.font = FZFontSize(13);
         [btn setTitleColor:RGB(42, 42, 42) forState:UIControlStateSelected];
         [btn setTitleColor:RGB(128, 128, 128) forState:UIControlStateNormal];
@@ -241,7 +254,8 @@ static const NSTimeInterval animationDuration = 0.2;
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [EPFactory label];
-        _titleLabel.font = [UIFont fontWithName:@"Lobster" size:20];
+        _titleLabel.textAlignment = NSTextAlignmentCenter;
+        _titleLabel.font = [[EPConfigurationManager manager] fontWithKey:@"lobster" size:25.f];
         _titleLabel.textColor = RGB(0, 0, 0);
     }
     return _titleLabel;

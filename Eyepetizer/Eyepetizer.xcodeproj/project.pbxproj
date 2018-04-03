@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21F5771A8899267C3B2FE5F2 /* libPods-EyepetizerUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F2481B46A87947E2A86810F8 /* libPods-EyepetizerUITests.a */; };
+		B3262499206E77BF001302B3 /* UIView+EPViewHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B3262498206E77BF001302B3 /* UIView+EPViewHelper.m */; };
 		B34D90D5206108CA001131F9 /* EPEmbeddedCellAgent.m in Sources */ = {isa = PBXBuildFile; fileRef = B34D90D4206108CA001131F9 /* EPEmbeddedCellAgent.m */; };
 		B36550D12058EFB600DB6E70 /* EPCategoryListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D02058EFB600DB6E70 /* EPCategoryListViewController.m */; };
 		B36550D42058F05900DB6E70 /* EPCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B36550D32058F05900DB6E70 /* EPCategoryTableViewCell.m */; };
@@ -28,7 +29,6 @@
 		B38D48CD2056648900C74E31 /* LYNetworkMacro.h in Sources */ = {isa = PBXBuildFile; fileRef = B38D48C220565DA600C74E31 /* LYNetworkMacro.h */; };
 		B3C29F2D206DD724006F9AEA /* EPVideoBriefCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C29F2C206DD724006F9AEA /* EPVideoBriefCell.m */; };
 		B3C29F30206DD966006F9AEA /* EPScrollFlowLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C29F2F206DD966006F9AEA /* EPScrollFlowLayout.m */; };
-		B3C29F34206E2563006F9AEA /* EPNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C29F33206E2563006F9AEA /* EPNavigationView.m */; };
 		B3C35AC5205B698900B1B130 /* UINavigationBar+EPFixed.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */; };
 		B3C35AC8205B776100B1B130 /* EPSearchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35AC7205B776100B1B130 /* EPSearchModel.m */; };
 		B3C35ACE205B9B1800B1B130 /* EPFollowCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3C35ACD205B9B1800B1B130 /* EPFollowCardCell.m */; };
@@ -56,7 +56,7 @@
 		B3D3ED352052662400B654AF /* EPTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED342052662400B654AF /* EPTabBarController.m */; };
 		B3D3ED382052664100B654AF /* EPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED372052664100B654AF /* EPNavigationController.m */; };
 		B3D3ED3C2052714A00B654AF /* EPConst.h in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3B2052714A00B654AF /* EPConst.h */; };
-		B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */; };
+		B3D3ED40205275A500B654AF /* EPNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D3ED3F205275A500B654AF /* EPNavigationView.m */; };
 		B3D883C62069E55300330067 /* EPVideoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883C52069E55300330067 /* EPVideoCell.m */; };
 		B3D883C9206A291400330067 /* EPBannerCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883C8206A291400330067 /* EPBannerCollectionCell.m */; };
 		B3D883CF206A326D00330067 /* EPBriefCardCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B3D883CE206A326D00330067 /* EPBriefCardCell.m */; };
@@ -88,6 +88,8 @@
 		609BC1470703BCF7300811C5 /* libPods-Eyepetizer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Eyepetizer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82E6DE70B0F3971168F0C6F6 /* Pods-Eyepetizer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Eyepetizer.release.xcconfig"; path = "Pods/Target Support Files/Pods-Eyepetizer/Pods-Eyepetizer.release.xcconfig"; sourceTree = "<group>"; };
 		A2096D301C506C00A52A70A2 /* Pods-EyepetizerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyepetizerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-EyepetizerTests/Pods-EyepetizerTests.release.xcconfig"; sourceTree = "<group>"; };
+		B3262497206E77BF001302B3 /* UIView+EPViewHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIView+EPViewHelper.h"; sourceTree = "<group>"; };
+		B3262498206E77BF001302B3 /* UIView+EPViewHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIView+EPViewHelper.m"; sourceTree = "<group>"; };
 		B34D90D3206108CA001131F9 /* EPEmbeddedCellAgent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPEmbeddedCellAgent.h; sourceTree = "<group>"; };
 		B34D90D4206108CA001131F9 /* EPEmbeddedCellAgent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPEmbeddedCellAgent.m; sourceTree = "<group>"; };
 		B36550CF2058EFB600DB6E70 /* EPCategoryListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPCategoryListViewController.h; sourceTree = "<group>"; };
@@ -124,8 +126,6 @@
 		B3C29F2C206DD724006F9AEA /* EPVideoBriefCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPVideoBriefCell.m; sourceTree = "<group>"; };
 		B3C29F2E206DD966006F9AEA /* EPScrollFlowLayout.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPScrollFlowLayout.h; sourceTree = "<group>"; };
 		B3C29F2F206DD966006F9AEA /* EPScrollFlowLayout.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPScrollFlowLayout.m; sourceTree = "<group>"; };
-		B3C29F32206E2563006F9AEA /* EPNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNavigationView.h; sourceTree = "<group>"; };
-		B3C29F33206E2563006F9AEA /* EPNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNavigationView.m; sourceTree = "<group>"; };
 		B3C35AC3205B698900B1B130 /* UINavigationBar+EPFixed.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UINavigationBar+EPFixed.h"; sourceTree = "<group>"; };
 		B3C35AC4205B698900B1B130 /* UINavigationBar+EPFixed.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UINavigationBar+EPFixed.m"; sourceTree = "<group>"; };
 		B3C35AC6205B776100B1B130 /* EPSearchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPSearchModel.h; sourceTree = "<group>"; };
@@ -179,8 +179,8 @@
 		B3D3ED372052664100B654AF /* EPNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNavigationController.m; sourceTree = "<group>"; };
 		B3D3ED3920526ECE00B654AF /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		B3D3ED3B2052714A00B654AF /* EPConst.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPConst.h; sourceTree = "<group>"; };
-		B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPHomeNavigationView.h; sourceTree = "<group>"; };
-		B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPHomeNavigationView.m; sourceTree = "<group>"; };
+		B3D3ED3E205275A500B654AF /* EPNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPNavigationView.h; sourceTree = "<group>"; };
+		B3D3ED3F205275A500B654AF /* EPNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EPNavigationView.m; sourceTree = "<group>"; };
 		B3D883C42069E55300330067 /* EPVideoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EPVideoCell.h; sourceTree = "<group>"; };
 		B3D883C52069E55300330067 /* EPVideoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EPVideoCell.m; sourceTree = "<group>"; };
 		B3D883C7206A291400330067 /* EPBannerCollectionCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EPBannerCollectionCell.h; sourceTree = "<group>"; };
@@ -304,8 +304,8 @@
 		B38D48BB20565D8900C74E31 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B3C29F32206E2563006F9AEA /* EPNavigationView.h */,
-				B3C29F33206E2563006F9AEA /* EPNavigationView.m */,
+				B3D3ED3E205275A500B654AF /* EPNavigationView.h */,
+				B3D3ED3F205275A500B654AF /* EPNavigationView.m */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -356,6 +356,8 @@
 		B3D03C9E205A50E800702334 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				B3262497206E77BF001302B3 /* UIView+EPViewHelper.h */,
+				B3262498206E77BF001302B3 /* UIView+EPViewHelper.m */,
 				B3D03C9F205A516D00702334 /* UIImage+EPColor.h */,
 				B3D03CA0205A516D00702334 /* UIImage+EPColor.m */,
 				B3C35AC3205B698900B1B130 /* UINavigationBar+EPFixed.h */,
@@ -536,8 +538,6 @@
 		B3D3ED3D2052757900B654AF /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B3D3ED3E205275A500B654AF /* EPHomeNavigationView.h */,
-				B3D3ED3F205275A500B654AF /* EPHomeNavigationView.m */,
 				B3C35AD2205B9B4300B1B130 /* EPScrollCell.h */,
 				B3C35AD3205B9B4300B1B130 /* EPScrollCell.m */,
 				B3C35ACC205B9B1800B1B130 /* EPFollowCardCell.h */,
@@ -852,6 +852,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3262499206E77BF001302B3 /* UIView+EPViewHelper.m in Sources */,
 				B3D03CA1205A516D00702334 /* UIImage+EPColor.m in Sources */,
 				B34D90D5206108CA001131F9 /* EPEmbeddedCellAgent.m in Sources */,
 				B38D48CC2056648900C74E31 /* LYNetworkHeader.h in Sources */,
@@ -871,13 +872,12 @@
 				B3C35AD7205BA90D00B1B130 /* EPFactory.m in Sources */,
 				B3C35AD4205B9B4300B1B130 /* EPScrollCell.m in Sources */,
 				B3D3ECFC205257D800B654AF /* main.m in Sources */,
-				B3D3ED40205275A500B654AF /* EPHomeNavigationView.m in Sources */,
+				B3D3ED40205275A500B654AF /* EPNavigationView.m in Sources */,
 				B3D3ED2C205265F300B654AF /* EPFollowViewController.m in Sources */,
 				B3D03CA7205A713200702334 /* EPSearchTitleLabel.m in Sources */,
 				B3C35AC8205B776100B1B130 /* EPSearchModel.m in Sources */,
 				B3D03CAA205A7B4B00702334 /* EPHotSpotTableViewCell.m in Sources */,
 				B3C35AD1205B9B2200B1B130 /* EPTextOnlyCell.m in Sources */,
-				B3C29F34206E2563006F9AEA /* EPNavigationView.m in Sources */,
 				B3C35ACE205B9B1800B1B130 /* EPFollowCardCell.m in Sources */,
 				B38D48C8205660C900C74E31 /* EPHomeNavigationViewModel.m in Sources */,
 				B3D883CF206A326D00330067 /* EPBriefCardCell.m in Sources */,
@@ -1059,7 +1059,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				DEVELOPMENT_TEAM = SBVY7F2826;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Eyepetizer/resource/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Eyepetizer/resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
@@ -1076,7 +1076,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8H42Q3R4VZ;
+				DEVELOPMENT_TEAM = SBVY7F2826;
 				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/Eyepetizer/resource/PrefixHeader.pch";
 				INFOPLIST_FILE = "$(SRCROOT)/Eyepetizer/resource/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.1;

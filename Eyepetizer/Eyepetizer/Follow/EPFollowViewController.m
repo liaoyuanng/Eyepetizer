@@ -7,8 +7,11 @@
 //
 
 #import "EPFollowViewController.h"
+#import "EPNavigationView.h"
 
-@interface EPFollowViewController ()<UINavigationControllerDelegate>
+@interface EPFollowViewController ()
+
+@property (nonatomic, strong) EPNavigationView *navigationView;
 
 @end
 
@@ -17,14 +20,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.delegate = self;
+    self.navigationView = [[EPNavigationView alloc] init];
+    self.navigationView.frame = CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width, 108);
+    self.navigationView.type = EPNavigationViewTypeNormal;
+    self.navigationView.title = @"Subscription";
+    [self.view addSubview:self.navigationView];
     // Do any additional setup after loading the view.
-}
-
-// hide navigation bar when view appear.
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
-    
-    [navigationController setNavigationBarHidden:YES animated:YES];
 }
 
 

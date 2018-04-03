@@ -32,6 +32,7 @@
     UICollectionViewFlowLayout *layout = [UICollectionViewFlowLayout new];
     layout.minimumLineSpacing = 0.f;
     layout.minimumInteritemSpacing = 0.f;
+    layout.sectionInset = UIEdgeInsetsMake(44, 0, 0, 0);
     self.collectionView.collectionViewLayout = layout;
     // regist all style cell
     [self.collectionView registerClass:[EPTextOnlyCell class] forCellWithReuseIdentifier:EPCellTypeTextCard];

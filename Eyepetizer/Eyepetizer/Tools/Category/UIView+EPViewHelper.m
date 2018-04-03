@@ -10,8 +10,12 @@
 
 @implementation UIView (EPViewHelper)
 
-+ (CGFloat)ep_bottom {
-    return 10;
+- (CGFloat)ep_bottom {
+    return self.frame.origin.y + self.frame.size.height;
+}
+
+- (CGFloat)ep_height {
+    return self.frame.size.height;
 }
 
 @end

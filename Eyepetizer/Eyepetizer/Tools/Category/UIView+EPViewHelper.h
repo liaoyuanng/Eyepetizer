@@ -10,6 +10,8 @@
 
 @interface UIView (EPViewHelper)
 
-+ (CGFloat)ep_bottom;
+- (CGFloat)ep_bottom;
+
+- (CGFloat)ep_height;
 
 @end

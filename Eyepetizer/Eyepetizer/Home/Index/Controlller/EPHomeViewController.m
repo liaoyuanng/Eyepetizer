@@ -7,7 +7,7 @@
 //
 
 #import "EPHomeViewController.h"
-#import "EPHomeNavigationView.h"
+#import "EPNavigationView.h"
 #import "EPHomeNavigationViewModel.h"
 #import "EPCategoryListViewController.h"
 #import "EPSearchViewController.h"
@@ -24,7 +24,7 @@
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 
-@property (nonatomic, strong) EPHomeNavigationView *navigationView;
+@property (nonatomic, strong) EPNavigationView *navigationView;
 
 @property (nonatomic, strong) NSMutableDictionary *childViewControllsMap;
 
@@ -40,11 +40,7 @@
 }
 
 - (void)customNavigationBar {
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
-    
-    self.automaticallyAdjustsScrollViewInsets = NO; // 取消 64pt 的位移
-//    self.edgesForExtendedLayout = UIRectEdgeTop;
-    self.navigationView = [[EPHomeNavigationView alloc] init];
+    self.navigationView = [[EPNavigationView alloc] init];
     self.navigationView.frame = CGRectMake(0, 0, self.navigationController.navigationBar.frame.size.width, 64);
     self.navigationView.type = EPNavigationViewTypeScroll;
     [self.view addSubview:self.navigationView];
@@ -96,7 +92,7 @@
 - (void)initUI {
     
     self.continerView = [[UIScrollView alloc] init];
-    self.continerView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-44-64);
+    self.continerView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight-44);
     self.continerView.backgroundColor = UIColor.whiteColor;
     self.continerView.pagingEnabled = YES;
     self.continerView.delegate = self;
@@ -121,12 +117,15 @@
         [viewController willMoveToParentViewController:self];
         return;
     }
+    if ([self.navigationView.dataSource[index].name isEqualToString:@"发现"]) {
+        return;
+    }
     // See about https://imliaoyuan.com/2016/08/30/%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E6%B7%BB%E5%8A%A0child_view_controller.html
     EPHomeCollectionController *viewcontroller = [[EPHomeCollectionController alloc] initWithCollectionViewLayout:[UICollectionViewFlowLayout new]];
     viewcontroller.apiUrl = self.navigationView.dataSource[index].apiUrl;
     viewcontroller.view.backgroundColor = [UIColor redColor];
     [self addChildViewController:viewcontroller];
-    viewcontroller.view.frame = CGRectMake(index * ScreenWidth, 64, ScreenWidth, ScreenHeight - 44 - 64);
+    viewcontroller.view.frame = CGRectMake(index * ScreenWidth, 0, ScreenWidth, ScreenHeight - 44);
     [self.continerView addSubview:viewcontroller.view];
     [viewcontroller willMoveToParentViewController:self];
     [self.childViewControllsMap setObject:viewcontroller forKey:@(index)];
