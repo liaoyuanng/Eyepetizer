@@ -42,7 +42,7 @@
     [self.collectionView registerClass:[EPVideoCell class] forCellWithReuseIdentifier:EPCellTypeVideoSmallCard];
     [self.collectionView registerClass:[EPBannerCollectionCell class] forCellWithReuseIdentifier:EPCellTypeHorizontalScroll];
     [self.collectionView registerClass:[EPBriefCardCell class] forCellWithReuseIdentifier:EPCellTypeBriefCard];
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
+//    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     [self configData];
 }
 

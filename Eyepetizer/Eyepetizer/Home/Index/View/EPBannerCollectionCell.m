@@ -80,7 +80,7 @@
         _collectionView.backgroundColor = UIColor.whiteColor;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [_collectionView registerClass:[EPBannerCell class] forCellWithReuseIdentifier:EPCellTypeBanner];
-        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
+//        [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:EPCellUnknowType];
     }
     return _collectionView;
 }
